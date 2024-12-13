@@ -23,16 +23,16 @@ class Login(QMainWindow):
         super().__init__()
         uic.loadUi('ui/login.ui', self)
         
-        self.email_input=self.findChild(QLineEdit,'txt_email' )
-        self.password_input=self.findChild(QLineEdit, 'txt_password')
+        self.email_input=self.findChild(QLineEdit,'loginemail' )
+        self.password_input=self.findChild(QLineEdit, 'loginpassword')
         
-        self.btn_loin=self.findChild(QPushButton,'btn_loin')
-        self.btn_register=self.findChild(QPushButton,'btn_register')
+        self.btn_loin=self.findChild(QPushButton,'Buttonlogin')
+        self.btn_register=self.findChild(QPushButton,'Buttonsignup')
 
         self.btn_loin.clicked.connect(self.login)
         self.btn_register.clicked.connect(self.show_register)
-        
     
+       
     def login(self):
         email=self.email_input.text()
         password=self.password_input.text()
@@ -69,12 +69,12 @@ class Register(QMainWindow):
         super().__init__()
         uic.loadUi('ui/register.ui',self)
 
-        self.email_input=self.findChild(QLineEdit,'txt_email')
-        self.name_input=self.findChild(QLineEdit,'txt_name')
-        self.password_input=self.findChild(QLineEdit,'txt_password')
-        self.confirm_password_input=self.findChild(QLineEdit,'txt_confirm_password')
+        self.email_input=self.findChild(QLineEdit,'loginemail')
+        self.name_input=self.findChild(QLineEdit,'loginname')
+        self.password_input=self.findChild(QLineEdit,'loginpassword')
+        self.confirm_password_input=self.findChild(QLineEdit,'loginconfirm')
 
-        self.btn_register=self.findChild(QPushButton,'btn_register')
+        self.btn_register=self.findChild(QPushButton,'Buttonsignup')
         self.btn_login=self.findChild(QPushButton,'btn_login')
 
     def register(self):
