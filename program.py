@@ -1,4 +1,5 @@
 from PyQt6.QtWidgets import QMainWindow, QApplication, QLineEdit, QMessageBox, QPushButton
+from PyQt6.QtGui import QIcon
 from PyQt6 import uic
 import sys
 import database
@@ -16,8 +17,6 @@ class Alert(QMessageBox):
             self.setWindowTitle('success')
             self.exec()
 
-
-
 class Login(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -26,11 +25,22 @@ class Login(QMainWindow):
         self.email_input=self.findChild(QLineEdit,'loginemail' )
         self.password_input=self.findChild(QLineEdit, 'loginpassword')
         
-        self.btn_loin=self.findChild(QPushButton,'Buttonlogin')
+        self.btn_login=self.findChild(QPushButton,'Buttonlogin')
         self.btn_register=self.findChild(QPushButton,'Buttonsignup')
+        self.Buttoneye_2=self.findChild(QPushButton,'Buttoneye_2')
 
-        self.btn_loin.clicked.connect(self.login)
+        self.btn_login.clicked.connect(self.login)
         self.btn_register.clicked.connect(self.show_register)
+        
+        self.Buttoneye_2.clicked.connect(lambda: self.hiddenOrShow(self.password_input, self.Buttoneye_2))
+        
+    def hiddenOrShow(self, input:QLineEdit, button:QPushButton):
+        if input.echoMode() == QLineEdit.EchoMode.Password:
+            input.setEchoMode(QLineEdit.EchoMode.Normal)
+            button.setIcon(QIcon("img/eye.png"))
+        else:
+            input.setEchoMode(QLineEdit.EchoMode.Password)
+            button.setIcon(QIcon("img/hidden.png"))
     
        
     def login(self):
@@ -42,8 +52,6 @@ class Login(QMainWindow):
             msg.error_message('Please enter email address')
             self.email_input.setFocus()
             return
-        
-    
     
         if password=='':
             msg=Alert()
@@ -61,13 +69,14 @@ class Login(QMainWindow):
     
     
     def show_register(self):
-        register= Register()
-        register.show()
+        self.register= Register()
+        self.register.show()
+        self.close()
 
 class Register(QMainWindow):
-    def __int__(self):
+    def __init__(self):
         super().__init__()
-        uic.loadUi('ui/register.ui',self)
+        uic.loadUi('ui/register.ui', self)
 
         self.email_input=self.findChild(QLineEdit,'loginemail')
         self.name_input=self.findChild(QLineEdit,'loginname')
@@ -76,6 +85,19 @@ class Register(QMainWindow):
 
         self.btn_register=self.findChild(QPushButton,'Buttonsignup')
         self.btn_login=self.findChild(QPushButton,'btn_login')
+        self.btn_eye=self.findChild(QPushButton,'eyebtn')
+        self.btn_eye2=self.findChild(QPushButton,'eyebtn_2')
+        
+        self.btn_eye.clicked.connect(lambda: self.hiddenOrShow(self.password_input, self.btn_eye))
+        self.btn_eye2.clicked.connect(lambda: self.hiddenOrShow(self.confirm_password_input, self.btn_eye2))
+        
+    def hiddenOrShow(self, input:QLineEdit, button:QPushButton):
+        if input.echoMode() == QLineEdit.EchoMode.Password:
+            input.setEchoMode(QLineEdit.EchoMode.Normal)
+            button.setIcon(QIcon("img/eye.png"))
+        else:
+            input.setEchoMode(QLineEdit.EchoMode.Password)
+            button.setIcon(QIcon("img/hidden.png"))
 
     def register(self):
         email=self.email_input.text()
@@ -123,7 +145,12 @@ class Register(QMainWindow):
             msg.error_message('Registration successful')
             self.close()
     
-
+class Main(QMainWindow):
+    def __int__(self, user_id):
+        super().__init__()
+        uic.loadUi('ui/register.ui',self)
+        self.user_id = user_id
+    
 
 
  

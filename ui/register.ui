@@ -6,40 +6,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>903</width>
+    <height>659</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color:rgb(217, 217, 217)</string>
+   <string notr="true">background-color:rgb(203, 203, 203)</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="Logopicture">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>180</y>
-      <width>311</width>
-      <height>231</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>../img/302065e0-36bf-477b-86d3-f71749fd23b1.webp</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
    <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>430</x>
+      <x>510</x>
       <y>-30</y>
       <width>401</width>
       <height>681</height>
@@ -60,29 +41,29 @@
     <property name="frameShadow">
      <enum>QFrame::Shadow::Raised</enum>
     </property>
-    <widget class="QLabel" name="logologin">
+    <widget class="QLabel" name="Logoaccount">
      <property name="geometry">
       <rect>
-       <x>110</x>
-       <y>150</y>
-       <width>171</width>
+       <x>10</x>
+       <y>140</y>
+       <width>851</width>
        <height>91</height>
       </rect>
      </property>
      <property name="font">
       <font>
        <family>Algerian</family>
-       <pointsize>36</pointsize>
+       <pointsize>22</pointsize>
       </font>
      </property>
      <property name="styleSheet">
       <string notr="true"/>
      </property>
      <property name="text">
-      <string>Login</string>
+      <string>Create an account</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="Loginname">
+    <widget class="QLineEdit" name="loginname">
      <property name="geometry">
       <rect>
        <x>60</x>
@@ -104,127 +85,32 @@
     padding: 5px;</string>
      </property>
      <property name="text">
+      <string/>
+     </property>
+     <property name="frame">
+      <bool>false</bool>
+     </property>
+     <property name="echoMode">
+      <enum>QLineEdit::EchoMode::Normal</enum>
+     </property>
+     <property name="dragEnabled">
+      <bool>false</bool>
+     </property>
+     <property name="readOnly">
+      <bool>false</bool>
+     </property>
+     <property name="placeholderText">
       <string>Name</string>
      </property>
-     <property name="frame">
-      <bool>false</bool>
-     </property>
-     <property name="echoMode">
-      <enum>QLineEdit::EchoMode::Normal</enum>
-     </property>
-     <property name="dragEnabled">
-      <bool>false</bool>
-     </property>
-     <property name="readOnly">
-      <bool>false</bool>
-     </property>
      <property name="clearButtonEnabled">
       <bool>false</bool>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="loginemail">
-     <property name="geometry">
-      <rect>
-       <x>60</x>
-       <y>350</y>
-       <width>261</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>SimSun</family>
-       <pointsize>-1</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: none;
-    border-bottom: 1px solid #000; /* Black underline */
-    font-size: 14px;
-    padding: 5px;</string>
-     </property>
-     <property name="text">
-      <string>Email</string>
-     </property>
-     <property name="frame">
-      <bool>false</bool>
-     </property>
-     <property name="echoMode">
-      <enum>QLineEdit::EchoMode::Normal</enum>
-     </property>
-     <property name="cursorPosition">
-      <number>5</number>
-     </property>
-     <property name="dragEnabled">
-      <bool>false</bool>
-     </property>
-     <property name="readOnly">
-      <bool>false</bool>
-     </property>
-     <property name="clearButtonEnabled">
-      <bool>false</bool>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="Buttonlogin">
-     <property name="geometry">
-      <rect>
-       <x>60</x>
-       <y>480</y>
-       <width>261</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: #000; /* Black background */
-    color: #fff; /* White text */
-    font-size: 14px; /* Adjust text size */
-    border: none; /* Remove borders */
-    border-radius: 20px; /* Rounded corners */
-    padding: 10px 20px; /* Add padding for a larger button */
-    text-align: center; /* Center the text */</string>
-     </property>
-     <property name="text">
-      <string>Login</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="Loddontyou">
-     <property name="geometry">
-      <rect>
-       <x>40</x>
-       <y>570</y>
-       <width>201</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Don't you have an account</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="Buttonsignup">
-     <property name="geometry">
-      <rect>
-       <x>220</x>
-       <y>570</y>
-       <width>93</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background: transparent; /* No background */
-    border: none; /* Remove border */
-    color: #666; /* Light gray text color */
-    font-size: 14px; /* Adjust font size as needed */
-    text-align: left; /* Align text to the left */</string>
-     </property>
-     <property name="text">
-      <string>Sign up?</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="loginpassword">
      <property name="geometry">
       <rect>
        <x>60</x>
-       <y>420</y>
+       <y>410</y>
        <width>261</width>
        <height>41</height>
       </rect>
@@ -263,13 +149,138 @@
       <bool>false</bool>
      </property>
     </widget>
-    <widget class="QPushButton" name="Buttoneye_2">
+    <widget class="QPushButton" name="Buttonsignup">
      <property name="geometry">
       <rect>
-       <x>300</x>
-       <y>430</y>
-       <width>21</width>
-       <height>21</height>
+       <x>70</x>
+       <y>560</y>
+       <width>261</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    font-size: 14px; /* Adjust text size */
+    border: none; /* Remove borders */
+    border-radius: 20px; /* Rounded corners */
+    padding: 10px 20px; /* Add padding for a larger button */
+    text-align: center; /* Center the text */</string>
+     </property>
+     <property name="text">
+      <string>Sign up</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="loginemail">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>330</y>
+       <width>261</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>SimSun</family>
+       <pointsize>-1</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: none;
+    border-bottom: 1px solid #000; /* Black underline */
+    font-size: 14px;
+    padding: 5px;</string>
+     </property>
+     <property name="text">
+      <string>Email</string>
+     </property>
+     <property name="frame">
+      <bool>false</bool>
+     </property>
+     <property name="echoMode">
+      <enum>QLineEdit::EchoMode::Normal</enum>
+     </property>
+     <property name="dragEnabled">
+      <bool>false</bool>
+     </property>
+     <property name="readOnly">
+      <bool>false</bool>
+     </property>
+     <property name="clearButtonEnabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="loginconfirm">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>480</y>
+       <width>261</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>SimSun</family>
+       <pointsize>-1</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: none;
+    border-bottom: 1px solid #000; /* Black underline */
+    font-size: 14px;
+    padding: 5px;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="frame">
+      <bool>false</bool>
+     </property>
+     <property name="echoMode">
+      <enum>QLineEdit::EchoMode::Password</enum>
+     </property>
+     <property name="cursorPosition">
+      <number>0</number>
+     </property>
+     <property name="dragEnabled">
+      <bool>false</bool>
+     </property>
+     <property name="readOnly">
+      <bool>false</bool>
+     </property>
+     <property name="placeholderText">
+      <string>Confirm Password</string>
+     </property>
+     <property name="clearButtonEnabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="eyebtn">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>410</y>
+       <width>41</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../img/hidden.png</normaloff>../img/hidden.png</iconset>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="eyebtn_2">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>480</y>
+       <width>41</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
@@ -281,19 +292,37 @@
      </property>
     </widget>
    </widget>
-   <zorder>frame</zorder>
-   <zorder>Logopicture</zorder>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>170</y>
+      <width>351</width>
+      <height>331</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../img/302065e0-36bf-477b-86d3-f71749fd23b1.webp</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>903</width>
      <height>26</height>
     </rect>
    </property>
   </widget>
+  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>
