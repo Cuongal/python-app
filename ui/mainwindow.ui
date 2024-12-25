@@ -17,91 +17,6 @@
    <string notr="true">background-color:rgb(145, 217, 217)</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="Tintuc_label">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>70</y>
-      <width>81</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color:rgb(204, 136, 102);
-border-radius: 10px</string>
-    </property>
-    <property name="text">
-     <string> Tin Tức</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="Lienhe_label">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>280</y>
-      <width>81</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color:rgb(204, 136, 102);
-border-radius: 10px</string>
-    </property>
-    <property name="text">
-     <string>  Liên hệ</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="Caidat_label">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>530</y>
-      <width>81</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color:rgb(204, 136, 102);
-border-radius: 10px</string>
-    </property>
-    <property name="text">
-     <string>  Cài đặt</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="Chucnang_lable">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>170</y>
-      <width>81</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color:rgb(204, 136, 102);
-border-radius: 10px</string>
-    </property>
-    <property name="text">
-     <string>Chức năng</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="Thongbao">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>410</y>
-      <width>81</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color:rgb(204, 136, 102);
-border-radius: 10px</string>
-    </property>
-    <property name="text">
-     <string>Thông báo</string>
-    </property>
-   </widget>
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
@@ -476,12 +391,12 @@ color:rgb(255, 255, 255)</string>
       </property>
       <property name="maximumDateTime">
        <datetime>
-        <hour>12</hour>
+        <hour>22</hour>
         <minute>59</minute>
         <second>59</second>
         <year>9999</year>
         <month>12</month>
-        <day>11</day>
+        <day>10</day>
        </datetime>
       </property>
      </widget>
@@ -564,12 +479,12 @@ color:rgb(255, 255, 255)</string>
       </property>
       <property name="maximumDateTime">
        <datetime>
-        <hour>5</hour>
+        <hour>15</hour>
         <minute>59</minute>
         <second>59</second>
         <year>9999</year>
         <month>12</month>
-        <day>11</day>
+        <day>10</day>
        </datetime>
       </property>
      </widget>
@@ -813,10 +728,11 @@ color:rgb(255, 255, 255)</string>
        <string notr="true">border: none;
     border-bottom: 1px solid #000; /* Black underline */
     font-size: 14px;
-    padding: 5px;</string>
+    padding: 5px;
+color: black;</string>
       </property>
       <property name="text">
-       <string>Name</string>
+       <string/>
       </property>
       <property name="frame">
        <bool>false</bool>
@@ -829,6 +745,9 @@ color:rgb(255, 255, 255)</string>
       </property>
       <property name="readOnly">
        <bool>false</bool>
+      </property>
+      <property name="placeholderText">
+       <string>Name</string>
       </property>
       <property name="clearButtonEnabled">
        <bool>false</bool>
@@ -853,10 +772,11 @@ color:rgb(255, 255, 255)</string>
        <string notr="true">border: none;
     border-bottom: 1px solid #000; /* Black underline */
     font-size: 14px;
-    padding: 5px;</string>
+    padding: 5px;
+color: black;</string>
       </property>
       <property name="text">
-       <string>Birth</string>
+       <string/>
       </property>
       <property name="frame">
        <bool>false</bool>
@@ -869,6 +789,9 @@ color:rgb(255, 255, 255)</string>
       </property>
       <property name="readOnly">
        <bool>false</bool>
+      </property>
+      <property name="placeholderText">
+       <string>Birthday</string>
       </property>
       <property name="clearButtonEnabled">
        <bool>false</bool>
@@ -893,7 +816,7 @@ color:rgb(255, 255, 255)</string>
     text-align: center; /* Center the text */</string>
       </property>
       <property name="text">
-       <string>Log-in</string>
+       <string>Save</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="lineEdit_8">
@@ -915,10 +838,11 @@ color:rgb(255, 255, 255)</string>
        <string notr="true">border: none;
     border-bottom: 1px solid #000; /* Black underline */
     font-size: 14px;
-    padding: 5px;</string>
+    padding: 5px;
+color: black;</string>
       </property>
       <property name="text">
-       <string>Mail</string>
+       <string/>
       </property>
       <property name="frame">
        <bool>false</bool>
@@ -931,6 +855,9 @@ color:rgb(255, 255, 255)</string>
       </property>
       <property name="readOnly">
        <bool>false</bool>
+      </property>
+      <property name="placeholderText">
+       <string>Mail</string>
       </property>
       <property name="clearButtonEnabled">
        <bool>false</bool>
@@ -955,10 +882,11 @@ color:rgb(255, 255, 255)</string>
        <string notr="true">border: none;
     border-bottom: 1px solid #000; /* Black underline */
     font-size: 14px;
-    padding: 5px;</string>
+    padding: 5px;
+color: black;</string>
       </property>
       <property name="text">
-       <string>Address</string>
+       <string/>
       </property>
       <property name="frame">
        <bool>false</bool>
@@ -971,6 +899,9 @@ color:rgb(255, 255, 255)</string>
       </property>
       <property name="readOnly">
        <bool>false</bool>
+      </property>
+      <property name="placeholderText">
+       <string>Address</string>
       </property>
       <property name="clearButtonEnabled">
        <bool>false</bool>
@@ -1520,6 +1451,74 @@ border-radius: 10px</string>
      <string> Cao Bảo Châu</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="btn_chucnang">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>150</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(204, 136, 102);
+border-radius: 10px</string>
+    </property>
+    <property name="text">
+     <string>Chức năng</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_lienhe">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>230</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(204, 136, 102);
+border-radius: 10px</string>
+    </property>
+    <property name="text">
+     <string>Liên hệ</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_caidat">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>310</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(204, 136, 102);
+border-radius: 10px</string>
+    </property>
+    <property name="text">
+     <string>Cài đặt</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_tintuc">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>70</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(204, 136, 102);
+border-radius: 10px</string>
+    </property>
+    <property name="text">
+     <string>Tin Tức</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -1527,7 +1526,7 @@ border-radius: 10px</string>
      <x>0</x>
      <y>0</y>
      <width>1100</width>
-     <height>26</height>
+     <height>24</height>
     </rect>
    </property>
   </widget>

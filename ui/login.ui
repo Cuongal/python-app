@@ -76,57 +76,17 @@
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true"/>
+      <string notr="true">color: black;</string>
      </property>
      <property name="text">
       <string>Login</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="Loginname">
-     <property name="geometry">
-      <rect>
-       <x>60</x>
-       <y>260</y>
-       <width>261</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>SimSun</family>
-       <pointsize>-1</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: none;
-    border-bottom: 1px solid #000; /* Black underline */
-    font-size: 14px;
-    padding: 5px;</string>
-     </property>
-     <property name="text">
-      <string>Name</string>
-     </property>
-     <property name="frame">
-      <bool>false</bool>
-     </property>
-     <property name="echoMode">
-      <enum>QLineEdit::EchoMode::Normal</enum>
-     </property>
-     <property name="dragEnabled">
-      <bool>false</bool>
-     </property>
-     <property name="readOnly">
-      <bool>false</bool>
-     </property>
-     <property name="clearButtonEnabled">
-      <bool>false</bool>
      </property>
     </widget>
     <widget class="QLineEdit" name="loginemail">
      <property name="geometry">
       <rect>
        <x>60</x>
-       <y>350</y>
+       <y>270</y>
        <width>261</width>
        <height>41</height>
       </rect>
@@ -141,10 +101,11 @@
       <string notr="true">border: none;
     border-bottom: 1px solid #000; /* Black underline */
     font-size: 14px;
-    padding: 5px;</string>
+    padding: 5px;
+color: black;</string>
      </property>
      <property name="text">
-      <string>Email</string>
+      <string/>
      </property>
      <property name="frame">
       <bool>false</bool>
@@ -153,13 +114,16 @@
       <enum>QLineEdit::EchoMode::Normal</enum>
      </property>
      <property name="cursorPosition">
-      <number>5</number>
+      <number>0</number>
      </property>
      <property name="dragEnabled">
       <bool>false</bool>
      </property>
      <property name="readOnly">
       <bool>false</bool>
+     </property>
+     <property name="placeholderText">
+      <string>Email</string>
      </property>
      <property name="clearButtonEnabled">
       <bool>false</bool>
@@ -169,7 +133,7 @@
      <property name="geometry">
       <rect>
        <x>60</x>
-       <y>480</y>
+       <y>430</y>
        <width>261</width>
        <height>51</height>
       </rect>
@@ -190,11 +154,14 @@
     <widget class="QLabel" name="Loddontyou">
      <property name="geometry">
       <rect>
-       <x>40</x>
-       <y>570</y>
+       <x>60</x>
+       <y>550</y>
        <width>201</width>
        <height>20</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: black;</string>
      </property>
      <property name="text">
       <string>Don't you have an account</string>
@@ -203,8 +170,8 @@
     <widget class="QPushButton" name="Buttonsignup">
      <property name="geometry">
       <rect>
-       <x>220</x>
-       <y>570</y>
+       <x>230</x>
+       <y>550</y>
        <width>93</width>
        <height>21</height>
       </rect>
@@ -224,7 +191,7 @@
      <property name="geometry">
       <rect>
        <x>60</x>
-       <y>420</y>
+       <y>350</y>
        <width>261</width>
        <height>41</height>
       </rect>
@@ -239,10 +206,11 @@
       <string notr="true">border: none;
     border-bottom: 1px solid #000; /* Black underline */
     font-size: 14px;
-    padding: 5px;</string>
+    padding: 5px;
+color: black;</string>
      </property>
      <property name="text">
-      <string>Password</string>
+      <string/>
      </property>
      <property name="frame">
       <bool>false</bool>
@@ -251,13 +219,16 @@
       <enum>QLineEdit::EchoMode::Password</enum>
      </property>
      <property name="cursorPosition">
-      <number>8</number>
+      <number>0</number>
      </property>
      <property name="dragEnabled">
       <bool>false</bool>
      </property>
      <property name="readOnly">
       <bool>false</bool>
+     </property>
+     <property name="placeholderText">
+      <string>Password</string>
      </property>
      <property name="clearButtonEnabled">
       <bool>false</bool>
@@ -267,7 +238,7 @@
      <property name="geometry">
       <rect>
        <x>300</x>
-       <y>430</y>
+       <y>370</y>
        <width>21</width>
        <height>21</height>
       </rect>
@@ -290,7 +261,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>26</height>
+     <height>24</height>
     </rect>
    </property>
   </widget>

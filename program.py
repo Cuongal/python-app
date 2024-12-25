@@ -1,4 +1,4 @@
-from PyQt6.QtWidgets import QMainWindow, QApplication, QLineEdit, QMessageBox, QPushButton
+from PyQt6.QtWidgets import QMainWindow, QApplication, QLineEdit, QMessageBox, QPushButton, QStackedWidget
 from PyQt6.QtGui import QIcon
 from PyQt6 import uic
 import sys
@@ -42,7 +42,6 @@ class Login(QMainWindow):
             input.setEchoMode(QLineEdit.EchoMode.Password)
             button.setIcon(QIcon("img/hidden.png"))
     
-       
     def login(self):
         email=self.email_input.text()
         password=self.password_input.text()
@@ -63,6 +62,7 @@ class Login(QMainWindow):
         if user:
             msg=Alert()
             msg.success_message('Login successful')
+            self.show_main(user['id'])
         else:
             msg=Alert()
             msg.error_message('Invalid email or password')
@@ -72,6 +72,11 @@ class Login(QMainWindow):
         self.register= Register()
         self.register.show()
         self.close()
+        
+    def show_main(self, user_id):
+        self.main= Main(user_id)
+        self.main.show()
+        self.close() 
 
 class Register(QMainWindow):
     def __init__(self):
@@ -90,6 +95,8 @@ class Register(QMainWindow):
         
         self.btn_eye.clicked.connect(lambda: self.hiddenOrShow(self.password_input, self.btn_eye))
         self.btn_eye2.clicked.connect(lambda: self.hiddenOrShow(self.confirm_password_input, self.btn_eye2))
+        
+        self.btn_login.clicked.connect(self.show_login)
         
     def hiddenOrShow(self, input:QLineEdit, button:QPushButton):
         if input.echoMode() == QLineEdit.EchoMode.Password:
@@ -130,10 +137,10 @@ class Register(QMainWindow):
             return
         
         if password !=confirm_password:
-             msg=Alert()
-             msg.error_message('Password and confirm password does not match ')
-             self.confirm_password_input.setFocus()
-             return
+            msg=Alert()
+            msg.error_message('Password and confirm password does not match ')
+            self.confirm_password_input.setFocus()
+            return
 
         user= database.find_user_by_email(email,password)
         if user:
@@ -144,16 +151,34 @@ class Register(QMainWindow):
             msg=Alert()
             msg.error_message('Registration successful')
             self.close()
+            
+    def show_login(self):
+        self.login=Login()
+        self.login.show()
+        self.close()
     
 class Main(QMainWindow):
-    def __int__(self, user_id):
+    def __init__(self, user_id):
         super().__init__()
-        uic.loadUi('ui/register.ui',self)
+        uic.loadUi('ui/mainwindow.ui',self)
         self.user_id = user_id
-    
+
+        self.btn_caidat = self.findChild(QPushButton,'btn_caidat')
+        self.btn_chucnang = self.findChild(QPushButton,'btn_chucnang')
+        self.btn_lienhe = self.findChild(QPushButton,'btn_lienhe')
+        self.btn_tintuc = self.findChild(QPushButton,'btn_tintuc')
+        
+        self.stackedWidget = self.findChild(QStackedWidget,'stackedWidget')
+        
+        self.btn_caidat.clicked.connect(lambda: self.navigation(2))
+        self.btn_chucnang.clicked.connect(lambda: self.navigation(3))
+        self.btn_lienhe.clicked.connect(lambda: self.navigation(1))
+        self.btn_tintuc.clicked.connect(lambda: self.navigation(0))
+
+    def navigation(self, index):
+        self.stackedWidget.setCurrentIndex(index)
 
 
- 
 if __name__ == '__main__':
     app= QApplication (sys.argv)
     login = Login()
