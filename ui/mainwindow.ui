@@ -36,7 +36,7 @@
      <string notr="true">background-color:rgb(255, 255, 255)</string>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="page_tintuc">
      <widget class="QTimeEdit" name="timeEdit">
@@ -391,7 +391,7 @@ color:rgb(255, 255, 255)</string>
       </property>
       <property name="maximumDateTime">
        <datetime>
-        <hour>22</hour>
+        <hour>15</hour>
         <minute>59</minute>
         <second>59</second>
         <year>9999</year>
@@ -479,7 +479,7 @@ color:rgb(255, 255, 255)</string>
       </property>
       <property name="maximumDateTime">
        <datetime>
-        <hour>15</hour>
+        <hour>8</hour>
         <minute>59</minute>
         <second>59</second>
         <year>9999</year>
@@ -703,7 +703,7 @@ color:rgb(255, 255, 255)</string>
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../../img/account-information.png</pixmap>
+       <pixmap>../img/account-information.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -932,7 +932,7 @@ color: black;</string>
      <widget class="QLabel" name="label_2">
       <property name="geometry">
        <rect>
-        <x>30</x>
+        <x>20</x>
         <y>170</y>
         <width>121</width>
         <height>41</height>
@@ -1174,7 +1174,7 @@ color:rgb(255, 255, 255);
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../../img/weekend.png</pixmap>
+       <pixmap>../img/weekend.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -1220,7 +1220,7 @@ color:rgb(255, 255, 255)</string>
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../../img/checklist.png</pixmap>
+       <pixmap>../img/checklist.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -1242,7 +1242,7 @@ color:rgb(255, 255, 255)</string>
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../../img/remove-user.png</pixmap>
+       <pixmap>../img/weekend.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -1264,7 +1264,7 @@ color:rgb(255, 255, 255)</string>
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../../img/checklist.png</pixmap>
+       <pixmap>../img/checklist.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -1286,7 +1286,7 @@ color:rgb(255, 255, 255)</string>
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../../img/checklist.png</pixmap>
+       <pixmap>../img/checklist.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -1305,7 +1305,7 @@ color:rgb(255, 255, 255)</string>
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../../img/front-of-bus.png</pixmap>
+       <pixmap>../img/front-of-bus.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -1324,7 +1324,7 @@ color:rgb(255, 255, 255)</string>
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../../img/account-information.png</pixmap>
+       <pixmap>../img/account-information.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -1343,7 +1343,7 @@ color:rgb(255, 255, 255)</string>
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../../img/interrogation-mark.png</pixmap>
+       <pixmap>../img/interrogation-mark.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -1362,7 +1362,7 @@ color:rgb(255, 255, 255)</string>
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../../img/weekend.png</pixmap>
+       <pixmap>../img/weekend.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -1384,7 +1384,7 @@ color:rgb(255, 255, 255)</string>
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../../img/images.jpg</pixmap>
+       <pixmap>../img/tải xuống.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -1421,7 +1421,7 @@ color:rgb(255, 255, 255)</string>
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../../img/tải xuống (1).png</pixmap>
+       <pixmap>../img/tải xuống (1).png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -1455,7 +1455,7 @@ border-radius: 10px</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>150</y>
+      <y>230</y>
       <width>81</width>
       <height>31</height>
      </rect>
@@ -1472,7 +1472,7 @@ border-radius: 10px</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>230</y>
+      <y>340</y>
       <width>81</width>
       <height>31</height>
      </rect>
@@ -1489,7 +1489,7 @@ border-radius: 10px</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>310</y>
+      <y>440</y>
       <width>81</width>
       <height>31</height>
      </rect>
@@ -1506,7 +1506,7 @@ border-radius: 10px</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>70</y>
+      <y>140</y>
       <width>81</width>
       <height>31</height>
      </rect>
@@ -1519,6 +1519,85 @@ border-radius: 10px</string>
      <string>Tin Tức</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label_17">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>400</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 10px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../img/png-clipart-computer-icons-installation-icon-setting-cdr-white-thumbnail.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_18">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>300</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../img/tải xuống (2).png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_19">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>180</y>
+      <width>51</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../img/7216128.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_20">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>100</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../img/tải xuống (3).png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -1526,7 +1605,7 @@ border-radius: 10px</string>
      <x>0</x>
      <y>0</y>
      <width>1100</width>
-     <height>24</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>
