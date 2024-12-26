@@ -97,6 +97,7 @@ class Register(QMainWindow):
         self.btn_eye2.clicked.connect(lambda: self.hiddenOrShow(self.confirm_password_input, self.btn_eye2))
         
         self.btn_login.clicked.connect(self.show_login)
+        self.btn_register.clicked.connect(self.register)
         
     def hiddenOrShow(self, input:QLineEdit, button:QPushButton):
         if input.echoMode() == QLineEdit.EchoMode.Password:
@@ -142,14 +143,15 @@ class Register(QMainWindow):
             self.confirm_password_input.setFocus()
             return
 
-        user= database.find_user_by_email(email,password)
+        user= database.find_user_by_email(email)
         if user:
             msg=Alert()
             msg.error_message('Email already exists')
         else:
-            database.create_user(email, password)
+            database.create_user(email,name,password)
             msg=Alert()
-            msg.error_message('Registration successful')
+            msg.success_message('Registration successful')
+            self.show_login()
             self.close()
             
     def show_login(self):
