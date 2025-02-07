@@ -1,0 +1,66 @@
+class Student:
+  def __int__(self,id, name, age, score,):
+    self.id=id
+    self.name=name
+    self.age=age
+    self. score=score
+    
+  def update (self, new_data:dict):
+   for key,value in new_data.items():
+     if hasattr(self,key):
+       setattr(self,key,value)
+  
+  def __str__(self):
+    return f"{self.name}({self.age})-{self.score}"
+  
+  def to_dict(self):
+    return{
+      "id": self.id,
+      "title": self.name,
+      "release_date":self.age,
+      "score": self.score,
+    }
+      
+
+
+class Studnets_list:
+  def __int__(self):
+    self.Student=[]
+  
+  def add(self, m:Student):
+    self.Student.append(m)
+
+
+  def update(self, m:Student):
+    for Student in self.Student:
+       if Student.id==m.id:
+         Student.update(m.to_dict())
+         return
+    self.add(m)
+  
+  def delete(self,id):
+    for Student in self.Student:
+       if Student.id==id:
+         self.movie.remove(movie)
+         return
+  
+  def get(self,id):
+      for Student in self.Student:
+       if Student.id==id:
+         return Student
+      return None
+       
+Student1 = Student(1, "Luong bb", "19", 8.7, )
+Student2 = Student(2, "Luong aa", "13", 7.2, )
+Student3 = Student(3, "Luong ii", "14", 6.7, )
+Student_list = [Student1,Student2, Student3 ]
+
+
+for Student in Student_list:
+  if Student.id==1:
+    Student.update({"score":9.0})
+  if Student.id==2:
+    Student_list.remove(Student)
+     
+for movie in Student_list:
+ print(Student)

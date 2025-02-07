@@ -1,0 +1,57 @@
+class Student:
+  def __int__(self, name, address, weight, height):
+    self.name=name
+    self.adress=address
+    self. height=height
+    self. weight=weight
+
+
+
+
+class Studnets_list:
+  def __int__(self):
+    self.Student=[]
+  
+  def add(self, m:Student):
+    self.Student.append(m)
+
+
+  def update(self, m:Student):
+    for Student in self.Student:
+       if Student.address==m.address:
+         Student.update(m.to_dict())
+         return
+    self.add(m)
+    
+    if Student.weight==m.weight:
+         Student.update(m.to_dict())
+         return
+    self.add(m)
+    
+
+    for Student in self.Student:
+       if Student.height==m.height:
+         Student.update(m.to_dict())
+         return
+    self.add(m)
+    
+  def delete(self,address,height, weight):
+    for Student in self.Student:
+       if Student.name==id:
+         self.address.remove(address)
+         return
+       if Student.name==id:
+         self.weight.remove(weight)
+         return
+       if Student. name==id:
+         self.height.remove(height)
+         return
+  
+
+       
+Student1 = Student("Luong bb", "112 đường Phạm Văn Đồng ",188 cm , 77 kg)
+Student2 = Student("Luong aa", "13 Phạm Thế Hiển", 172 cm,56 kg)
+Student3 = Student("Luong ii", "14 Tân Sân Nhất", 167 cm, 50 kg )
+Student_list = [Student1,Student2, Student3 ]
+    
+print(Student_list)
