@@ -1,0 +1,123 @@
+[
+{
+   "name": "Lương Minh Hiếu",
+   "age": 17,
+   "gender": "Male",
+   "address": "39-15 Tháp Mười, Phường 2, Quận 6, Hồ Chí Minh, Việt Nam",
+   "role": "student",
+   "email": "Lương Minh Hiếu@student.ssn.edu.vn",
+   "phone": "0948392438",
+   "class":"11.3",
+   "grade":11
+}
+]
+
+
+[
+   {
+      "name": "Phạm An Thái",
+      "age": 16,
+      "gender": "Female",
+      "address": "66 An Đ. Vương, Phường 9, Quận 5, Hồ Chí Minh, Việt Nam",
+      "role": "student",
+      "email": "Phạm An Thái@student.ssn.edu.vn",
+      "phone": "0953348275",
+      "class":"10.7",
+      "grade":10
+   }
+]
+   
+
+[
+   {
+      "name": "Thái Văn An ",
+      "age": 18,
+      "gender": "Male",
+      "address": "213-189 Đ. Đào Duy Từ, Phường 6, Quận 10, Hồ Chí Minh, Việt Nam",
+      "role": "student",
+      "email": "Thái Văn An @student.ssn.edu.vn",
+      "phone": "0945665831",
+      "class":"12.1",
+      "grade":12
+   }
+]
+   
+
+[
+   {
+      "name": "Chu Cao Xí ",
+      "age": 16,
+      "gender": "Male",
+      "address": "185/134 Phó Cơ Điều, Phường 7, Quận 11, Hồ Chí Minh, Việt Nam",
+      "role": "student",
+      "email": "Chu Cao Xí @student.ssn.edu.vn",
+      "phone": "0932254674",
+      "class":"10.8",
+      "grade":10
+   }
+]
+
+
+#Thầy cô
+[
+   {
+      "name": "Trần Đại Nghĩa ",
+      "age": 25,
+      "gender": "Male",
+      "address": "119-107 Lý Nam Đế, Phường 7, Quận 11, Hồ Chí Minh, Việt Nam",
+      "role": "teacher",
+      "email": "Trần Đại Nghĩa @teacher.ssn.edu.vn",
+      "phone": "097775432",
+      "homeroom teacher":"12.1",
+      "subject":"Math",
+      "salary":"12.000.000VNĐ"
+   }
+]
+
+[
+   {
+      "name": "Châu Thị Cảm Linh",
+      "age": 27,
+      "gender": "Female",
+      "address": "158 Phó Cơ Điều, Phường 7, Quận 11, Hồ Chí Minh, Việt Nam",
+      "role": "teacher",
+      "email": "Châu Thị Cảm Linh@teacher.ssn.edu.vn",
+      "phone": "0987674365",
+      "homeroom teacher":"10.2",
+      "subject":"History",
+      "salary":"14.000.000VNĐ"
+   }
+]
+[
+   {
+      "name": "Nguyễn Quang Phương ",
+      "age": 28,
+      "gender": "Remale",
+      "address": "238/140A Dương Tử Giang, Phường 7, Quận 11, Hồ Chí Minh, Việt Nam",
+      "role": "teacher",
+      "email": "Trần Đại Nghĩa @teacher.ssn.edu.vn",
+      "phone": "0987865467",
+      "homeroom teacher":"12.2",
+      "subject":"Music",
+      "salary":"15.000.000VNĐ"
+   }
+]
+
+
+
+#Thời khoá biểu
+[
+{
+"subject": "Math",
+"schedule": "Monday, Wednesday, Friday",
+"time": "10:00 AM - 11:00 AM",
+"teacher": "John Doe"
+},
+{
+"subject": "Math",
+"schedule": "Monday, Wednesday, Friday",
+"time": "10:00 AM - 11:00 AM",
+"teacher": "John Doe"
+}
+
+]

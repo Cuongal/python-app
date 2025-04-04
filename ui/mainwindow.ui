@@ -36,7 +36,7 @@
      <string notr="true">background-color:rgb(144, 175, 197)</string>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="page_tintuc">
      <widget class="QTimeEdit" name="timeEdit">
@@ -391,7 +391,7 @@ color:rgb(255, 255, 255)</string>
       </property>
       <property name="maximumDateTime">
        <datetime>
-        <hour>18</hour>
+        <hour>11</hour>
         <minute>59</minute>
         <second>59</second>
         <year>9999</year>
@@ -479,7 +479,7 @@ color:rgb(255, 255, 255)</string>
       </property>
       <property name="maximumDateTime">
        <datetime>
-        <hour>11</hour>
+        <hour>4</hour>
         <minute>59</minute>
         <second>59</second>
         <year>9999</year>
@@ -682,6 +682,19 @@ color:rgb(255, 255, 255)</string>
         <y>20</y>
         <width>16</width>
         <height>591</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Orientation::Vertical</enum>
+      </property>
+     </widget>
+     <widget class="QScrollBar" name="verticalScrollBar_2">
+      <property name="geometry">
+       <rect>
+        <x>970</x>
+        <y>30</y>
+        <width>16</width>
+        <height>471</height>
        </rect>
       </property>
       <property name="orientation">
@@ -1617,6 +1630,19 @@ border-radius: 10px</string>
     </property>
     <property name="openExternalLinks">
      <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_21">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>400</y>
+      <width>81</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
     </property>
    </widget>
   </widget>
