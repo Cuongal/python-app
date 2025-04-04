@@ -36,7 +36,7 @@
      <string notr="true">background-color:rgb(144, 175, 197)</string>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="page_tintuc">
      <widget class="QTimeEdit" name="timeEdit">
@@ -391,7 +391,7 @@ color:rgb(255, 255, 255)</string>
       </property>
       <property name="maximumDateTime">
        <datetime>
-        <hour>11</hour>
+        <hour>4</hour>
         <minute>59</minute>
         <second>59</second>
         <year>9999</year>
@@ -479,12 +479,12 @@ color:rgb(255, 255, 255)</string>
       </property>
       <property name="maximumDateTime">
        <datetime>
-        <hour>4</hour>
+        <hour>21</hour>
         <minute>59</minute>
         <second>59</second>
         <year>9999</year>
         <month>12</month>
-        <day>9</day>
+        <day>8</day>
        </datetime>
       </property>
      </widget>
@@ -1424,7 +1424,7 @@ color:rgb(255, 255, 255)</string>
      <widget class="QLabel" name="label_85">
       <property name="geometry">
        <rect>
-        <x>290</x>
+        <x>280</x>
         <y>370</y>
         <width>41</width>
         <height>41</height>
@@ -1503,7 +1503,7 @@ border-radius: 10px</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>440</y>
+      <y>460</y>
       <width>81</width>
       <height>31</height>
      </rect>
@@ -1537,7 +1537,7 @@ border-radius: 10px</string>
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>400</y>
+      <y>420</y>
       <width>41</width>
       <height>31</height>
      </rect>
@@ -1632,17 +1632,43 @@ border-radius: 10px</string>
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="label_21">
+   <widget class="QPushButton" name="btn_caidat_2">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>400</y>
+      <y>570</y>
       <width>81</width>
-      <height>71</height>
+      <height>31</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(204, 136, 102);
+border-radius: 10px</string>
+    </property>
     <property name="text">
-     <string>TextLabel</string>
+     <string>Thông báo</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_21">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>530</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 10px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../img/bell-icon.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>
