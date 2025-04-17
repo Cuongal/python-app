@@ -36,7 +36,7 @@
      <string notr="true">background-color:rgb(144, 175, 197)</string>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="page_tintuc">
      <widget class="QTimeEdit" name="timeEdit">
@@ -391,12 +391,12 @@ color:rgb(255, 255, 255)</string>
       </property>
       <property name="maximumDateTime">
        <datetime>
-        <hour>4</hour>
+        <hour>21</hour>
         <minute>59</minute>
         <second>59</second>
         <year>9999</year>
         <month>12</month>
-        <day>9</day>
+        <day>8</day>
        </datetime>
       </property>
      </widget>
@@ -479,7 +479,7 @@ color:rgb(255, 255, 255)</string>
       </property>
       <property name="maximumDateTime">
        <datetime>
-        <hour>21</hour>
+        <hour>14</hour>
         <minute>59</minute>
         <second>59</second>
         <year>9999</year>
@@ -703,25 +703,6 @@ color:rgb(255, 255, 255)</string>
      </widget>
     </widget>
     <widget class="QWidget" name="page">
-     <widget class="QLabel" name="label_9">
-      <property name="geometry">
-       <rect>
-        <x>400</x>
-        <y>20</y>
-        <width>141</width>
-        <height>111</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap>../img/account-information.png</pixmap>
-      </property>
-      <property name="scaledContents">
-       <bool>true</bool>
-      </property>
-     </widget>
      <widget class="QLineEdit" name="lineEdit_3">
       <property name="geometry">
        <rect>
@@ -918,6 +899,53 @@ color: white;</string>
       </property>
       <property name="clearButtonEnabled">
        <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_avatar">
+      <property name="geometry">
+       <rect>
+        <x>350</x>
+        <y>10</y>
+        <width>201</width>
+        <height>141</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../img/account-information.png</normaloff>../img/account-information.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>150</width>
+        <height>150</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+      <property name="autoRepeat">
+       <bool>false</bool>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+      <property name="autoDefault">
+       <bool>false</bool>
+      </property>
+      <property name="default">
+       <bool>false</bool>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
       </property>
      </widget>
     </widget>
@@ -1401,6 +1429,12 @@ color:rgb(255, 255, 255)</string>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+      <property name="openExternalLinks">
+       <bool>false</bool>
       </property>
      </widget>
      <widget class="QLabel" name="label_15">
