@@ -139,7 +139,7 @@ class Ui_MainWindow(object):
         self.dateEdit_5.setStyleSheet("background-color:rgb(255, 255, 255)")
         self.dateEdit_5.setDateTime(QtCore.QDateTime(QtCore.QDate(2024, 12, 10), QtCore.QTime(11, 38, 0)))
         self.dateEdit_5.setTime(QtCore.QTime(11, 38, 0))
-        self.dateEdit_5.setMaximumDateTime(QtCore.QDateTime(QtCore.QDate(9999, 12, 9), QtCore.QTime(4, 59, 59)))
+        self.dateEdit_5.setMaximumDateTime(QtCore.QDateTime(QtCore.QDate(9999, 12, 8), QtCore.QTime(21, 59, 59)))
         self.dateEdit_5.setObjectName("dateEdit_5")
         self.label_16 = QtWidgets.QLabel(parent=self.page_tintuc)
         self.label_16.setEnabled(True)
@@ -166,7 +166,7 @@ class Ui_MainWindow(object):
         self.dateEdit_6.setStyleSheet("background-color:rgb(255, 255, 255)")
         self.dateEdit_6.setDateTime(QtCore.QDateTime(QtCore.QDate(2024, 12, 10), QtCore.QTime(11, 38, 0)))
         self.dateEdit_6.setTime(QtCore.QTime(11, 38, 0))
-        self.dateEdit_6.setMaximumDateTime(QtCore.QDateTime(QtCore.QDate(9999, 12, 8), QtCore.QTime(21, 59, 59)))
+        self.dateEdit_6.setMaximumDateTime(QtCore.QDateTime(QtCore.QDate(9999, 12, 8), QtCore.QTime(14, 59, 59)))
         self.dateEdit_6.setObjectName("dateEdit_6")
         self.stackedWidget.addWidget(self.page_tintuc)
         self.page_3 = QtWidgets.QWidget()
@@ -245,12 +245,6 @@ class Ui_MainWindow(object):
         self.stackedWidget.addWidget(self.page_3)
         self.page = QtWidgets.QWidget()
         self.page.setObjectName("page")
-        self.label_9 = QtWidgets.QLabel(parent=self.page)
-        self.label_9.setGeometry(QtCore.QRect(400, 20, 141, 111))
-        self.label_9.setText("")
-        self.label_9.setPixmap(QtGui.QPixmap("/Users/pinxun/Documents/MindX/PTA/PTA07/TriCuong/python-app/ui/../img/account-information.png"))
-        self.label_9.setScaledContents(True)
-        self.label_9.setObjectName("label_9")
         self.lineEdit_3 = QtWidgets.QLineEdit(parent=self.page)
         self.lineEdit_3.setGeometry(QtCore.QRect(340, 160, 261, 51))
         font = QtGui.QFont()
@@ -333,6 +327,22 @@ class Ui_MainWindow(object):
         self.lineEdit_9.setReadOnly(False)
         self.lineEdit_9.setClearButtonEnabled(False)
         self.lineEdit_9.setObjectName("lineEdit_9")
+        self.btn_avatar = QtWidgets.QPushButton(parent=self.page)
+        self.btn_avatar.setGeometry(QtCore.QRect(350, 10, 201, 141))
+        self.btn_avatar.setAutoFillBackground(False)
+        self.btn_avatar.setText("")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("/Users/pinxun/Documents/MindX/PTA/PTA07/TriCuong/python-app/ui/../img/account-information.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.btn_avatar.setIcon(icon)
+        self.btn_avatar.setIconSize(QtCore.QSize(150, 150))
+        self.btn_avatar.setCheckable(False)
+        self.btn_avatar.setChecked(False)
+        self.btn_avatar.setAutoRepeat(False)
+        self.btn_avatar.setAutoExclusive(False)
+        self.btn_avatar.setAutoDefault(False)
+        self.btn_avatar.setDefault(False)
+        self.btn_avatar.setFlat(True)
+        self.btn_avatar.setObjectName("btn_avatar")
         self.stackedWidget.addWidget(self.page)
         self.page_chucnang = QtWidgets.QWidget()
         self.page_chucnang.setObjectName("page_chucnang")
@@ -500,6 +510,8 @@ class Ui_MainWindow(object):
         self.label_64.setText("")
         self.label_64.setPixmap(QtGui.QPixmap("/Users/pinxun/Documents/MindX/PTA/PTA07/TriCuong/python-app/ui/../img/tải xuống.png"))
         self.label_64.setScaledContents(True)
+        self.label_64.setWordWrap(False)
+        self.label_64.setOpenExternalLinks(False)
         self.label_64.setObjectName("label_64")
         self.label_15 = QtWidgets.QLabel(parent=self.page_chucnang)
         self.label_15.setGeometry(QtCore.QRect(270, 420, 71, 41))
@@ -514,6 +526,145 @@ class Ui_MainWindow(object):
         self.label_85.setScaledContents(True)
         self.label_85.setObjectName("label_85")
         self.stackedWidget.addWidget(self.page_chucnang)
+        self.page_schedule = QtWidgets.QWidget()
+        self.page_schedule.setObjectName("page_schedule")
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.page_schedule)
+        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
+        self.calendar = QtWidgets.QCalendarWidget(parent=self.page_schedule)
+        self.calendar.setMinimumSize(QtCore.QSize(400, 300))
+        self.calendar.setStyleSheet("\n"
+"QCalendarWidget {\n"
+"    background-color: #336b87;\n"
+"    color: white;\n"
+"}\n"
+"QCalendarWidget QToolButton {\n"
+"    color: white;\n"
+"    background-color: #336b87;\n"
+"    border: 1px solid #90afc5;\n"
+"    border-radius: 3px;\n"
+"    padding: 3px;\n"
+"    margin: 3px;\n"
+"}\n"
+"QCalendarWidget QToolButton:hover {\n"
+"    background-color: #2c5a73;\n"
+"}\n"
+"QCalendarWidget QMenu {\n"
+"    background-color: #336b87;\n"
+"    color: white;\n"
+"}\n"
+"QCalendarWidget QSpinBox {\n"
+"    color: white;\n"
+"    background-color: #336b87;\n"
+"    selection-background-color: #2c5a73;\n"
+"    selection-color: white;\n"
+"}\n"
+"QCalendarWidget QTableView {\n"
+"    background-color: #336b87;\n"
+"    alternate-background-color: #2c5a73;\n"
+"    selection-background-color: #90afc5;\n"
+"    selection-color: white;\n"
+"    color: white;\n"
+"    outline: none;\n"
+"}\n"
+"QCalendarWidget QAbstractItemView:enabled {\n"
+"    color: white;\n"
+"}\n"
+"QCalendarWidget QAbstractItemView:disabled {\n"
+"    color: #90afc5;\n"
+"}\n"
+"QCalendarWidget QTableView::item:hover {\n"
+"    background-color: #2c5a73;\n"
+"}\n"
+"QCalendarWidget QTableView::item:selected {\n"
+"    background-color: #90afc5;\n"
+"}\n"
+"/* Style for days of the week */\n"
+"QCalendarWidget QWidget#qt_calendar_navigationbar { \n"
+"    background-color: #336b87;\n"
+"}\n"
+"QCalendarWidget QWidget { \n"
+"    alternate-background-color: #336b87;\n"
+"    color: white;\n"
+"}\n"
+"         ")
+        self.calendar.setObjectName("calendar")
+        self.horizontalLayout_2.addWidget(self.calendar)
+        self.schedule_widget = QtWidgets.QWidget(parent=self.page_schedule)
+        self.schedule_widget.setObjectName("schedule_widget")
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.schedule_widget)
+        self.verticalLayout_2.setObjectName("verticalLayout_2")
+        self.date_label = QtWidgets.QLabel(parent=self.schedule_widget)
+        self.date_label.setStyleSheet("color: white; font-weight: bold;")
+        self.date_label.setObjectName("date_label")
+        self.verticalLayout_2.addWidget(self.date_label)
+        self.schedule_table = QtWidgets.QTableWidget(parent=self.schedule_widget)
+        self.schedule_table.setStyleSheet("\n"
+"QTableWidget {\n"
+"    background-color: rgb(144, 175, 197);\n"
+"    color: black;\n"
+"    gridline-color: #2c5a73;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"QTableWidget::item {\n"
+"    padding: 8px;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"QTableWidget::item:selected {\n"
+"    background-color: #336b87;\n"
+"    color: white;\n"
+"}\n"
+"\n"
+"QHeaderView::section {\n"
+"    background-color: #336b87;\n"
+"    color: white;\n"
+"    padding: 10px;\n"
+"    border: none;\n"
+"    font-weight: bold;\n"
+"    text-align: center;\n"
+"}\n"
+"\n"
+"QTableWidget QScrollBar:vertical {\n"
+"    background-color: rgb(144, 175, 197);\n"
+"    width: 12px;\n"
+"    margin: 0px;\n"
+"}\n"
+"\n"
+"QTableWidget QScrollBar::handle:vertical {\n"
+"    background-color: #336b87;\n"
+"    border-radius: 6px;\n"
+"    min-height: 20px;\n"
+"}\n"
+"\n"
+"QTableWidget QScrollBar::add-line:vertical,\n"
+"QTableWidget QScrollBar::sub-line:vertical {\n"
+"    height: 0px;\n"
+"}\n"
+"\n"
+"QTableWidget QScrollBar:horizontal {\n"
+"    background-color: rgb(144, 175, 197);\n"
+"    height: 12px;\n"
+"    margin: 0px;\n"
+"}\n"
+"\n"
+"QTableWidget QScrollBar::handle:horizontal {\n"
+"    background-color: #336b87;\n"
+"    border-radius: 6px;\n"
+"    min-width: 20px;\n"
+"}\n"
+"\n"
+"QTableWidget QScrollBar::add-line:horizontal,\n"
+"QTableWidget QScrollBar::sub-line:horizontal {\n"
+"    width: 0px;\n"
+"}\n"
+"            ")
+        self.schedule_table.setObjectName("schedule_table")
+        self.schedule_table.setColumnCount(0)
+        self.schedule_table.setRowCount(0)
+        self.verticalLayout_2.addWidget(self.schedule_table)
+        self.horizontalLayout_2.addWidget(self.schedule_widget)
+        self.stackedWidget.addWidget(self.page_schedule)
         self.ten = QtWidgets.QLabel(parent=self.centralwidget)
         self.ten.setGeometry(QtCore.QRect(0, 0, 591, 51))
         font = QtGui.QFont()
@@ -598,7 +749,7 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentIndex(4)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -606,7 +757,7 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label_3.setText(_translate("MainWindow", "[SSV] - Hoãn sự kiện CISS Has Talent 2024 | Delaying CISS Has Talent 2024"))
         self.label_4.setText(_translate("MainWindow", "[SSV] - Ngày Hội Sách Lần 1 Năm Học 2024-2025 | Book Fair 2024-2025"))
-        self.label_6.setText(_translate("MainWindow", "[SSV] - Thông Tin Chi Tiết Về “House Colour Day” | Information Regarding \"House Colour Day\""))
+        self.label_6.setText(_translate("MainWindow", "[SSV] - Thông Tin Chi Tiết Về \"House Colour Day\" | Information Regarding \"House Colour Day\""))
         self.label_7.setText(_translate("MainWindow", "[SSV] - Show Your House Spirit – Wear Your House Colors! | Thể hiện tinh thần Nhà - Diện Màu của Nhà!"))
         self.label_16.setText(_translate("MainWindow", "[SSV] - Sedbergh Vietnam 2024 Christmas Letter | Thư Giáng Sinh 2024"))
         self.label_75.setText(_translate("MainWindow", " Lê Hiếu-Giáo Viên chủ nhiệm-Địa lí"))
@@ -638,6 +789,7 @@ class Ui_MainWindow(object):
         self.label_45.setText(_translate("MainWindow", "Đặt lịch"))
         self.label_47.setText(_translate("MainWindow", "Thời khoá biểu"))
         self.label_15.setText(_translate("MainWindow", " Ăn uống"))
+        self.date_label.setText(_translate("MainWindow", "Thời khoá biểu ngày: "))
         self.ten.setText(_translate("MainWindow", " Cao Bảo Châu"))
         self.btn_chucnang.setText(_translate("MainWindow", "Chức năng"))
         self.btn_lienhe.setText(_translate("MainWindow", "Liên hệ"))

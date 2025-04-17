@@ -1,5 +1,6 @@
 from PyQt6.QtWidgets import *
 from PyQt6.QtGui import *
+from PyQt6.QtCore import QDate, Qt
 from PyQt6 import uic
 import sys
 import database
@@ -66,7 +67,6 @@ class Login(QMainWindow):
         else:
             msg=Alert()
             msg.error_message('Invalid email or password')
-    
     
     def show_register(self):
         self.register= Register()
@@ -164,33 +164,69 @@ class Main(QMainWindow):
         super().__init__()
         uic.loadUi('ui/mainwindow.ui',self)
         self.user_id = user_id
-        self.user=database.find_user_by_id(user_id)
-        
+        self.user = database.find_user_by_id(user_id)
 
+        # Initialize UI elements
         self.btn_caidat = self.findChild(QPushButton,'btn_caidat')
         self.btn_chucnang = self.findChild(QPushButton,'btn_chucnang')
         self.btn_lienhe = self.findChild(QPushButton,'btn_lienhe')
         self.btn_tintuc = self.findChild(QPushButton,'btn_tintuc')
-        self.btn_avatar=self.findChild(QPushButton,'btn_avatar')
+        self.btn_avatar = self.findChild(QPushButton,'btn_avatar')
         
+        # Find schedule button
+        self.btn_schedule = self.findChild(QLabel, 'label_47')  # Thời khoá biểu label
         
         self.stackedWidget = self.findChild(QStackedWidget,'stackedWidget')
         
+        # Initialize schedule page elements
+        self.calendar = self.findChild(QCalendarWidget, 'calendar')
+        self.date_label = self.findChild(QLabel, 'date_label')
+        self.schedule_table = self.findChild(QTableWidget, 'schedule_table')
+
+        if not self.calendar or not self.date_label or not self.schedule_table:
+            print("Failed to find schedule widgets!")
+            return
+        
+        # Set table properties
+        self.schedule_table.setColumnCount(5)
+        self.schedule_table.setHorizontalHeaderLabels(['Môn học', 'Bắt đầu', 'Kết thúc', 'Giáo viên', 'Phòng học'])
+        self.schedule_table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
+        self.schedule_table.setAlternatingRowColors(True)
+        
+        # Connect buttons
         self.btn_caidat.clicked.connect(lambda: self.navigation(2))
         self.btn_chucnang.clicked.connect(lambda: self.navigation(3))
         self.btn_lienhe.clicked.connect(lambda: self.navigation(1))
         self.btn_tintuc.clicked.connect(lambda: self.navigation(0))
         self.btn_avatar.clicked.connect(self.update_avatar)
+        
+        # Make schedule label clickable and connect it
+        if self.btn_schedule:
+            self.btn_schedule.setStyleSheet("QLabel { cursor: pointer; }")
+            self.btn_schedule.mousePressEvent = lambda e: self.navigation(4)  # 4 is the index of schedule page
+        
+        # Connect calendar selection changed signal
+        self.calendar.selectionChanged.connect(self.update_schedule)
+        
+        # Initialize schedule with current date
+        self.calendar.setSelectedDate(QDate.currentDate())
+        self.update_schedule()
+        
+        # Load user info
+        self.load_user_info()
 
     def navigation(self, index):
+        print(f"Navigating to index: {index}")  # Debug print
         self.stackedWidget.setCurrentIndex(index)
 
     def load_user_info(self):
-        self.lb_name = self.findChild(QLabel, 'lb_name' )
+        self.lb_name = self.findChild(QLabel, 'lb_name')
         self.lb_email = self.findChild(QLabel, 'lb_email')
-        self.lb_name.setText(self.user["name"]) 
-        self.lb_email.setText(self.user["email"])
-        self.btn_avatar.setIcon(QIcon(self.user["avatar"]))
+        if self.user:
+            self.lb_name.setText(self.user["name"])
+            self.lb_email.setText(self.user["email"])
+            if "avatar" in self.user:
+                self.btn_avatar.setIcon(QIcon(self.user["avatar"]))
 
     def update_avatar(self):
         file,_= QFileDialog.getOpenFileName(self,"Select Image","","Image Files(*.png *.jpg *jpeg *.bmp)")
@@ -198,12 +234,69 @@ class Main(QMainWindow):
             self.user["avatar"]=file
             self.btn_avatar.setIcon(QIcon(file))
             database.update_user_avatar(self.user_id,file)
+            
+    def update_schedule(self):
+        if not self.calendar or not self.schedule_table:
+            print("Schedule widgets not found!")
+            return
+            
+        # Get selected date
+        selected_date = self.calendar.selectedDate()
+        date_str = selected_date.toString('yyyy-MM-dd')
+        
+        # Update date label
+        self.date_label.setText(f"Thời khoá biểu ngày: {selected_date.toString('dd/MM/yyyy')}")
+        
+        # Get schedule for selected date
+        schedule = database.get_schedule_by_date(date_str)
+        
+        # Clear table
+        self.schedule_table.clearContents()
+        
+        if not schedule:
+            # No data found - show message
+            self.schedule_table.setRowCount(1)
+            no_data_item = QTableWidgetItem("Không có lịch học cho ngày này")
+            no_data_item.setTextAlignment(Qt.AlignmentFlag.AlignCenter)
+            # Span across all columns
+            self.schedule_table.setSpan(0, 0, 1, 5)
+            self.schedule_table.setItem(0, 0, no_data_item)
+            return
+        
+        # Reset any previous spans
+        self.schedule_table.clearSpans()
+        
+        # Update table with data
+        self.schedule_table.setRowCount(len(schedule))
+        
+        for row, schedule_item in enumerate(schedule):
+            # Create items
+            items = [
+                QTableWidgetItem(schedule_item['subject']),
+                QTableWidgetItem(schedule_item['start_time']),
+                QTableWidgetItem(schedule_item['end_time']),
+                QTableWidgetItem(schedule_item['teacher']),
+                QTableWidgetItem(schedule_item['room'])
+            ]
+            
+            # Set items in table
+            for col, item in enumerate(items):
+                item.setTextAlignment(Qt.AlignmentFlag.AlignCenter)
+                self.schedule_table.setItem(row, col, item)
+            
+            # Set color for break time
+            if schedule_item['type'] == 'break':
+                for col in range(5):
+                    item = self.schedule_table.item(row, col)
+                    if item:
+                        item.setBackground(QColor('#FFD700'))  # Gold color for break time
 
+        # Adjust column widths
+        self.schedule_table.resizeColumnsToContents()
 
 if __name__ == '__main__':
-    app= QApplication (sys.argv)
-    login = Login()
-    login.show()
-    login = Main(2)
-    login.show()
+    app = QApplication(sys.argv)
+    # login = Login()
+    main = Main(1)
+    main.show()
     sys.exit(app.exec())
