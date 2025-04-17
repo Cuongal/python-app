@@ -33,3 +33,4 @@ def find_user_user_by_email_and_password(email,password):
 #create_user('alexluong2703@gail.com', "TRi Cuong", "2703")
 print(find_user_by_email('alexluong2703@gail.com'))
 print(find_user_user_by_email_and_password('alexluong2703@gail.com','2703'))
+print('hello')
