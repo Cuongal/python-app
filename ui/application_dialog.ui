@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ApplicationDialog</class>
+ <widget class="QDialog" name="ApplicationDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>500</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Tạo đơn mới</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(144, 175, 197);</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="type_layout">
+     <item>
+      <widget class="QLabel" name="type_label">
+       <property name="text">
+        <string>Loại đơn:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="type_combo">
+       <item>
+        <property name="text">
+         <string>Xin nghỉ</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Xin phép ra ngoài</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Xin bảo lưu</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Khác</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="recipient_layout">
+     <item>
+      <widget class="QLabel" name="recipient_label">
+       <property name="text">
+        <string>Người nhận:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="recipient_input"/>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="title_layout">
+     <item>
+      <widget class="QLabel" name="title_label">
+       <property name="text">
+        <string>Tiêu đề:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="title_input"/>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="content_layout">
+     <item>
+      <widget class="QLabel" name="content_label">
+       <property name="text">
+        <string>Nội dung:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QTextEdit" name="content_input"/>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="date_layout">
+     <item>
+      <layout class="QVBoxLayout" name="start_date_layout">
+       <item>
+        <widget class="QLabel" name="start_date_label">
+         <property name="text">
+          <string>Ngày bắt đầu:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QDateEdit" name="start_date">
+         <property name="calendarPopup">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="end_date_layout">
+       <item>
+        <widget class="QLabel" name="end_date_label">
+         <property name="text">
+          <string>Ngày kết thúc:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QDateEdit" name="end_date">
+         <property name="calendarPopup">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="button_layout">
+     <item>
+      <widget class="QPushButton" name="save_button">
+       <property name="text">
+        <string>Lưu</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="cancel_button">
+       <property name="text">
+        <string>Hủy</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui> 

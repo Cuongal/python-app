@@ -27,127 +27,25 @@ def create_tables():
     )
     ''')
     
-    conn.commit()
-    conn.close()
-    print("Schedule table dropped and recreated successfully")
-
-def generate_april_schedule():
-    # Danh sách môn học và giáo viên
-    morning_subjects = [
-        ("Toán", "Bùi Thị Lan", "Phòng A101"),
-        ("Ngữ Văn", "Phạm Đăng Dung", "Phòng A102"),
-        ("Tiếng Anh", "Emily Williams", "Phòng A103"),
-        ("Vật Lý", "Lê Kim Anh", "Phòng B101"),
-        ("Hóa Học", "Mai Quốc Duy", "Phòng B102"),
-        ("Sinh Học", "Trần An Khang", "Phòng B103"),
-        ("Địa Lý", "Lê Hiếu", "Phòng C101"),
-        ("GDCD", "Nguyễn Huyền Trang", "Phòng C102"),
-        ("Thể Dục", "James Anderson", "Sân thể thao"),
-        ("GDQP", "Đỗ Minh Tuấn", "Phòng C103")
-    ]
-
-    schedule_data = []
-    start_date = datetime(2025, 4, 1)  # Changed to 2025
-    end_date = datetime(2025, 4, 30)   # Changed to 2025
-    current_date = start_date
-
-    while current_date <= end_date:
-        if current_date.weekday() < 5:  # 0-4 là thứ 2 đến thứ 6
-            morning_times = [
-                ("07:00", "07:45"),
-                ("07:45", "08:30"),
-                ("08:45", "09:30"),
-                ("09:30", "10:15"),
-                ("10:15", "11:00")
-            ]
-
-            afternoon_times = [
-                ("13:00", "13:45"),
-                ("13:45", "14:30"),
-                ("14:30", "15:15"),
-                ("15:45", "16:30"),
-                ("16:30", "17:15")
-            ]
-
-            import random
-            daily_subjects = random.sample(morning_subjects, len(morning_subjects))
-            
-            # Thêm các tiết sáng
-            for i, time_slot in enumerate(morning_times):
-                subject, teacher, room = daily_subjects[i]
-                schedule_data.append((
-                    current_date.strftime('%Y-%m-%d'),
-                    subject,
-                    time_slot[0],
-                    time_slot[1],
-                    teacher,
-                    room,
-                    'normal'
-                ))
-                
-                # Thêm giải lao sau tiết 2
-                if i == 1:
-                    schedule_data.append((
-                        current_date.strftime('%Y-%m-%d'),
-                        'Giải lao',
-                        '08:30',
-                        '08:45',
-                        '',
-                        '',
-                        'break'
-                    ))
-
-            # Thêm các tiết chiều
-            daily_subjects = random.sample(morning_subjects, len(morning_subjects))
-            for i, time_slot in enumerate(afternoon_times):
-                subject, teacher, room = daily_subjects[i]
-                schedule_data.append((
-                    current_date.strftime('%Y-%m-%d'),
-                    subject,
-                    time_slot[0],
-                    time_slot[1],
-                    teacher,
-                    room,
-                    'normal'
-                ))
-                
-                # Thêm giải lao sau tiết 8 (tiết 3 buổi chiều)
-                if i == 2:
-                    schedule_data.append((
-                        current_date.strftime('%Y-%m-%d'),
-                        'Giải lao',
-                        '15:15',
-                        '15:45',
-                        '',
-                        '',
-                        'break'
-                    ))
-
-        current_date += timedelta(days=1)
-
-    return schedule_data
-
-def insert_sample_schedule():
-    conn = sqlite3.connect('./data/database.db')
-    cursor = conn.cursor()
-    
-    # Xóa dữ liệu cũ
-    cursor.execute('DELETE FROM schedule')
-    
-    # Tạo dữ liệu mẫu
-    schedule_data = generate_april_schedule()
-    print(f"Generated {len(schedule_data)} schedule items")  # Debug print
-    
-    # Thêm dữ liệu mới
-    cursor.executemany('''
-    INSERT INTO schedule (date, subject, start_time, end_time, teacher, room, type) 
-    VALUES (?, ?, ?, ?, ?, ?, ?)
-    ''', schedule_data)
-    
-    print(f"Inserted {cursor.rowcount} rows")  # Debug print
+    # Create applications table
+    cursor.execute('''
+    CREATE TABLE IF NOT EXISTS applications (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        user_id INTEGER NOT NULL,
+        type TEXT NOT NULL,
+        recipient TEXT NOT NULL,
+        title TEXT NOT NULL,
+        content TEXT NOT NULL,
+        start_date TEXT NOT NULL,
+        end_date TEXT NOT NULL,
+        status TEXT NOT NULL,
+        created_at TEXT NOT NULL
+    )
+    ''')
     
     conn.commit()
     conn.close()
+    print("Tables created successfully")
 
 def get_schedule_by_date(date_str):
     conn = sqlite3.connect('./data/database.db')
@@ -217,15 +115,96 @@ def find_user_by_id(user_id):
     conn= sqlite3.connect('./data/database.db')
     cursor=conn.cursor()
     cursor.row_factory = dict_factory
-    cursor.execute('SELECT id, email, name, password From user WHERE id=?',(user_id,))
+    cursor.execute('SELECT id, email, name, password, avatar, birthday, gender From user WHERE id=?',(user_id,))
     user=cursor.fetchone()
     conn.close()
     return user
 
-# Initialize database
-create_tables()
-insert_sample_schedule()
+def update_user(user_id, name, birthday, gender):
+    conn= sqlite3.connect('./data/database.db')
+    cursor=conn.cursor()
+    cursor.row_factory = dict_factory
+    cursor.execute('UPDATE user SET name=?, birthday=?, gender=? WHERE id=?',(name,birthday,gender,user_id))
+    conn.commit()
+    conn.close()
 
-# create_user('alexluong2703@gail.com', "TRi Cuong", "2703")
-print(find_user_by_email('alexluong2703@gail.com'))
-print(find_user_user_by_email_and_password('alexluong2703@gail.com','2703'))
+# Application functions
+def create_application(data):
+    """Create a new application"""
+    conn = sqlite3.connect('./data/database.db')
+    cursor = conn.cursor()
+    try:
+        cursor.execute('''
+        INSERT INTO applications (
+            user_id, type, recipient, title, content, 
+            start_date, end_date, status, created_at
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ''', (
+            data['user_id'], data['type'], data['recipient'], 
+            data['title'], data['content'], data['start_date'], 
+            data['end_date'], data['status'], datetime.now().isoformat()
+        ))
+        conn.commit()
+        return True
+    except Exception as e:
+        print(f"Error creating application: {e}")
+        return False
+    finally:
+        conn.close()
+
+def get_application_by_id(app_id):
+    """Get application by id"""
+    conn = sqlite3.connect('./data/database.db')
+    cursor = conn.cursor()
+    cursor.row_factory = dict_factory
+    cursor.execute('SELECT * FROM applications WHERE id = ?', (app_id,))
+    app = cursor.fetchone()
+    conn.close()
+    return app
+
+def get_applications_by_user_id(user_id):
+    """Get all applications for a user"""
+    conn = sqlite3.connect('./data/database.db')
+    cursor = conn.cursor()
+    cursor.row_factory = dict_factory
+    cursor.execute('SELECT * FROM applications WHERE user_id = ? ORDER BY created_at DESC', (user_id,))
+    apps = cursor.fetchall()
+    conn.close()
+    return apps
+
+def update_application(data):
+    """Update an application"""
+    conn = sqlite3.connect('./data/database.db')
+    cursor = conn.cursor()
+    try:
+        cursor.execute('''
+        UPDATE applications 
+        SET type = ?, recipient = ?, title = ?, content = ?,
+            start_date = ?, end_date = ?, status = ?
+        WHERE id = ?
+        ''', (
+            data['type'], data['recipient'], data['title'],
+            data['content'], data['start_date'], data['end_date'],
+            data.get('status', 'pending'), data['id']
+        ))
+        conn.commit()
+        return True
+    except Exception as e:
+        print(f"Error updating application: {e}")
+        return False
+    finally:
+        conn.close()
+
+def delete_application(app_id):
+    """Delete an application"""
+    conn = sqlite3.connect('./data/database.db')
+    cursor = conn.cursor()
+    try:
+        cursor.execute('DELETE FROM applications WHERE id = ?', (app_id,))
+        conn.commit()
+        return True
+    except Exception as e:
+        print(f"Error deleting application: {e}")
+        return False
+    finally:
+        conn.close()

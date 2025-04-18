@@ -36,7 +36,7 @@
      <string notr="true">background-color:rgb(144, 175, 197)</string>
     </property>
     <property name="currentIndex">
-     <number>4</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="page_tintuc">
      <widget class="QTimeEdit" name="timeEdit">
@@ -200,7 +200,7 @@ border-radius: 10px;
 color:rgb(255, 255, 255)</string>
       </property>
       <property name="text">
-       <string>[SSV] - Thông Tin Chi Tiết Về "House Colour Day" | Information Regarding &quot;House Colour Day&quot;</string>
+       <string>[SSV] - Thông Tin Chi Tiết Về &quot;House Colour Day&quot; | Information Regarding &quot;House Colour Day&quot;</string>
       </property>
       <property name="scaledContents">
        <bool>false</bool>
@@ -391,7 +391,7 @@ color:rgb(255, 255, 255)</string>
       </property>
       <property name="maximumDateTime">
        <datetime>
-        <hour>21</hour>
+        <hour>14</hour>
         <minute>59</minute>
         <second>59</second>
         <year>9999</year>
@@ -479,7 +479,7 @@ color:rgb(255, 255, 255)</string>
       </property>
       <property name="maximumDateTime">
        <datetime>
-        <hour>14</hour>
+        <hour>7</hour>
         <minute>59</minute>
         <second>59</second>
         <year>9999</year>
@@ -489,7 +489,149 @@ color:rgb(255, 255, 255)</string>
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="page_3">
+    <widget class="QWidget" name="page_applications">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(144, 175, 197);</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QPushButton" name="btn_new_application">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(0, 0, 165);
+border-radius: 10px;
+color: rgb(255, 255, 255);
+padding: 10px;
+font-weight: bold;</string>
+          </property>
+          <property name="text">
+           <string>Tạo đơn mới</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btn_edit_application">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(0, 0, 165);
+border-radius: 10px;
+color: rgb(255, 255, 255);
+padding: 10px;
+font-weight: bold;</string>
+          </property>
+          <property name="text">
+           <string>Sửa đơn</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btn_delete_application">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(0, 0, 165);
+border-radius: 10px;
+color: rgb(255, 255, 255);
+padding: 10px;
+font-weight: bold;</string>
+          </property>
+          <property name="text">
+           <string>Xóa đơn</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QTableWidget" name="applications_table">
+        <property name="styleSheet">
+         <string notr="true">
+QTableWidget {
+    background-color: rgb(144, 175, 197);
+    color: black;
+    gridline-color: #2c5a73;
+    border: none;
+}
+
+QTableWidget::item {
+    padding: 8px;
+    border: none;
+}
+
+QTableWidget::item:selected {
+    background-color: #336b87;
+    color: white;
+}
+
+QHeaderView::section {
+    background-color: #336b87;
+    color: white;
+    padding: 10px;
+    border: none;
+    font-weight: bold;
+    text-align: center;
+}
+
+QTableWidget QScrollBar:vertical {
+    background-color: rgb(144, 175, 197);
+    width: 12px;
+    margin: 0px;
+}
+
+QTableWidget QScrollBar::handle:vertical {
+    background-color: #336b87;
+    border-radius: 6px;
+    min-height: 20px;
+}
+
+QTableWidget QScrollBar::add-line:vertical,
+QTableWidget QScrollBar::sub-line:vertical {
+    height: 0px;
+}
+
+QTableWidget QScrollBar:horizontal {
+    background-color: rgb(144, 175, 197);
+    height: 12px;
+    margin: 0px;
+}
+
+QTableWidget QScrollBar::handle:horizontal {
+    background-color: #336b87;
+    border-radius: 6px;
+    min-width: 20px;
+}
+
+QTableWidget QScrollBar::add-line:horizontal,
+QTableWidget QScrollBar::sub-line:horizontal {
+    width: 0px;
+}
+         </string>
+        </property>
+        <property name="alternatingRowColors">
+         <bool>true</bool>
+        </property>
+        <property name="selectionMode">
+         <enum>QAbstractItemView::SelectionMode::SingleSelection</enum>
+        </property>
+        <property name="selectionBehavior">
+         <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="lienhe">
      <widget class="QLabel" name="label_75">
       <property name="geometry">
        <rect>
@@ -702,8 +844,8 @@ color:rgb(255, 255, 255)</string>
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="page">
-     <widget class="QLineEdit" name="lineEdit_3">
+    <widget class="QWidget" name="setting">
+     <widget class="QLineEdit" name="txt_name">
       <property name="geometry">
        <rect>
         <x>340</x>
@@ -747,7 +889,29 @@ color: white;</string>
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_7">
+     <widget class="QPushButton" name="btn_update_info">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>500</y>
+        <width>261</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    font-size: 14px; /* Adjust text size */
+    border: none; /* Remove borders */
+    border-radius: 20px; /* Rounded corners */
+    padding: 10px 20px; /* Add padding for a larger button */
+    text-align: center; /* Center the text */</string>
+      </property>
+      <property name="text">
+       <string>Save</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="txt_email">
       <property name="geometry">
        <rect>
         <x>340</x>
@@ -785,117 +949,7 @@ color: white;</string>
        <bool>false</bool>
       </property>
       <property name="placeholderText">
-       <string>Birthday</string>
-      </property>
-      <property name="clearButtonEnabled">
-       <bool>false</bool>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton">
-      <property name="geometry">
-       <rect>
-        <x>340</x>
-        <y>500</y>
-        <width>261</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: #000; /* Black background */
-    color: #fff; /* White text */
-    font-size: 14px; /* Adjust text size */
-    border: none; /* Remove borders */
-    border-radius: 20px; /* Rounded corners */
-    padding: 10px 20px; /* Add padding for a larger button */
-    text-align: center; /* Center the text */</string>
-      </property>
-      <property name="text">
-       <string>Save</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lineEdit_8">
-      <property name="geometry">
-       <rect>
-        <x>340</x>
-        <y>320</y>
-        <width>261</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>SimSun</family>
-        <pointsize>-1</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">border: none;
-    border-bottom: 1px solid #000; /* Black underline */
-    font-size: 14px;
-    padding: 5px;
-color: white;</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="frame">
-       <bool>false</bool>
-      </property>
-      <property name="echoMode">
-       <enum>QLineEdit::EchoMode::Normal</enum>
-      </property>
-      <property name="dragEnabled">
-       <bool>false</bool>
-      </property>
-      <property name="readOnly">
-       <bool>false</bool>
-      </property>
-      <property name="placeholderText">
        <string>Mail</string>
-      </property>
-      <property name="clearButtonEnabled">
-       <bool>false</bool>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lineEdit_9">
-      <property name="geometry">
-       <rect>
-        <x>340</x>
-        <y>400</y>
-        <width>261</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>SimSun</family>
-        <pointsize>-1</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">border: none;
-    border-bottom: 1px solid #000; /* Black underline */
-    font-size: 14px;
-    padding: 5px;
-color: white;</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="frame">
-       <bool>false</bool>
-      </property>
-      <property name="echoMode">
-       <enum>QLineEdit::EchoMode::Normal</enum>
-      </property>
-      <property name="dragEnabled">
-       <bool>false</bool>
-      </property>
-      <property name="readOnly">
-       <bool>false</bool>
-      </property>
-      <property name="placeholderText">
-       <string>Address</string>
       </property>
       <property name="clearButtonEnabled">
        <bool>false</bool>
@@ -947,6 +1001,55 @@ color: white;</string>
       <property name="flat">
        <bool>true</bool>
       </property>
+     </widget>
+     <widget class="QDateEdit" name="d_dob">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>330</y>
+        <width>261</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: none;
+    border-bottom: 1px solid #000; /* Black underline */
+    font-size: 14px;
+    padding: 5px;
+color: white;</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="cb_gender">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>420</y>
+        <width>261</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: none;
+    border-bottom: 1px solid #000; /* Black underline */
+    font-size: 14px;
+    padding: 5px;
+color: white;</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>None</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Male</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Female</string>
+       </property>
+      </item>
      </widget>
     </widget>
     <widget class="QWidget" name="page_chucnang">
@@ -1082,44 +1185,6 @@ color:rgb(255, 255, 255);
        <string>Đánh giá thường xuyên</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_13">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>250</y>
-        <width>71</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <italic>false</italic>
-        <bold>false</bold>
-        <underline>false</underline>
-        <strikeout>false</strikeout>
-       </font>
-      </property>
-      <property name="mouseTracking">
-       <bool>false</bool>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color:rgb(0, 0, 165);
-border-radius: 10px;
-color:rgb(255, 255, 255)</string>
-      </property>
-      <property name="text">
-       <string>  Xin nghỉ</string>
-      </property>
-      <property name="scaledContents">
-       <bool>false</bool>
-      </property>
-      <property name="wordWrap">
-       <bool>false</bool>
-      </property>
-      <property name="openExternalLinks">
-       <bool>false</bool>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_14">
       <property name="geometry">
        <rect>
@@ -1225,24 +1290,6 @@ color:rgb(255, 255, 255);
       </property>
       <property name="openExternalLinks">
        <bool>false</bool>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_47">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>90</y>
-        <width>101</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color:rgb(0, 0, 165);
-border-radius: 10px;
-color:rgb(255, 255, 255)</string>
-      </property>
-      <property name="text">
-       <string>Thời khoá biểu</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_48">
@@ -1474,6 +1521,42 @@ color:rgb(255, 255, 255)</string>
        <bool>true</bool>
       </property>
      </widget>
+     <widget class="QPushButton" name="btn_schedule">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>100</y>
+        <width>100</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(0, 0, 165);
+border-radius: 10px;
+color:rgb(255, 255, 255)</string>
+      </property>
+      <property name="text">
+       <string>Thời khoá biểu</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_application">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>260</y>
+        <width>100</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(0, 0, 165);
+border-radius: 10px;
+color:rgb(255, 255, 255)</string>
+      </property>
+      <property name="text">
+       <string>Làm đơn</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="page_schedule">
      <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -1630,7 +1713,7 @@ QTableWidget QScrollBar::sub-line:horizontal {
      </layout>
     </widget>
    </widget>
-   <widget class="QLabel" name="ten">
+   <widget class="QLabel" name="name_header">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -1866,7 +1949,7 @@ border-radius: 10px</string>
      <x>0</x>
      <y>0</y>
      <width>1100</width>
-     <height>26</height>
+     <height>24</height>
     </rect>
    </property>
   </widget>

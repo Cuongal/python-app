@@ -139,7 +139,7 @@ class Ui_MainWindow(object):
         self.dateEdit_5.setStyleSheet("background-color:rgb(255, 255, 255)")
         self.dateEdit_5.setDateTime(QtCore.QDateTime(QtCore.QDate(2024, 12, 10), QtCore.QTime(11, 38, 0)))
         self.dateEdit_5.setTime(QtCore.QTime(11, 38, 0))
-        self.dateEdit_5.setMaximumDateTime(QtCore.QDateTime(QtCore.QDate(9999, 12, 8), QtCore.QTime(21, 59, 59)))
+        self.dateEdit_5.setMaximumDateTime(QtCore.QDateTime(QtCore.QDate(9999, 12, 8), QtCore.QTime(14, 59, 59)))
         self.dateEdit_5.setObjectName("dateEdit_5")
         self.label_16 = QtWidgets.QLabel(parent=self.page_tintuc)
         self.label_16.setEnabled(True)
@@ -166,12 +166,116 @@ class Ui_MainWindow(object):
         self.dateEdit_6.setStyleSheet("background-color:rgb(255, 255, 255)")
         self.dateEdit_6.setDateTime(QtCore.QDateTime(QtCore.QDate(2024, 12, 10), QtCore.QTime(11, 38, 0)))
         self.dateEdit_6.setTime(QtCore.QTime(11, 38, 0))
-        self.dateEdit_6.setMaximumDateTime(QtCore.QDateTime(QtCore.QDate(9999, 12, 8), QtCore.QTime(14, 59, 59)))
+        self.dateEdit_6.setMaximumDateTime(QtCore.QDateTime(QtCore.QDate(9999, 12, 8), QtCore.QTime(7, 59, 59)))
         self.dateEdit_6.setObjectName("dateEdit_6")
         self.stackedWidget.addWidget(self.page_tintuc)
-        self.page_3 = QtWidgets.QWidget()
-        self.page_3.setObjectName("page_3")
-        self.label_75 = QtWidgets.QLabel(parent=self.page_3)
+        self.page_applications = QtWidgets.QWidget()
+        self.page_applications.setStyleSheet("background-color: rgb(144, 175, 197);")
+        self.page_applications.setObjectName("page_applications")
+        self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.page_applications)
+        self.verticalLayout_3.setObjectName("verticalLayout_3")
+        self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
+        self.btn_new_application = QtWidgets.QPushButton(parent=self.page_applications)
+        self.btn_new_application.setStyleSheet("background-color: rgb(0, 0, 165);\n"
+"border-radius: 10px;\n"
+"color: rgb(255, 255, 255);\n"
+"padding: 10px;\n"
+"font-weight: bold;")
+        self.btn_new_application.setObjectName("btn_new_application")
+        self.horizontalLayout_3.addWidget(self.btn_new_application)
+        self.btn_edit_application = QtWidgets.QPushButton(parent=self.page_applications)
+        self.btn_edit_application.setStyleSheet("background-color: rgb(0, 0, 165);\n"
+"border-radius: 10px;\n"
+"color: rgb(255, 255, 255);\n"
+"padding: 10px;\n"
+"font-weight: bold;")
+        self.btn_edit_application.setObjectName("btn_edit_application")
+        self.horizontalLayout_3.addWidget(self.btn_edit_application)
+        self.btn_delete_application = QtWidgets.QPushButton(parent=self.page_applications)
+        self.btn_delete_application.setStyleSheet("background-color: rgb(0, 0, 165);\n"
+"border-radius: 10px;\n"
+"color: rgb(255, 255, 255);\n"
+"padding: 10px;\n"
+"font-weight: bold;")
+        self.btn_delete_application.setObjectName("btn_delete_application")
+        self.horizontalLayout_3.addWidget(self.btn_delete_application)
+        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_3.addItem(spacerItem)
+        self.verticalLayout_3.addLayout(self.horizontalLayout_3)
+        self.applications_table = QtWidgets.QTableWidget(parent=self.page_applications)
+        self.applications_table.setStyleSheet("\n"
+"QTableWidget {\n"
+"    background-color: rgb(144, 175, 197);\n"
+"    color: black;\n"
+"    gridline-color: #2c5a73;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"QTableWidget::item {\n"
+"    padding: 8px;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"QTableWidget::item:selected {\n"
+"    background-color: #336b87;\n"
+"    color: white;\n"
+"}\n"
+"\n"
+"QHeaderView::section {\n"
+"    background-color: #336b87;\n"
+"    color: white;\n"
+"    padding: 10px;\n"
+"    border: none;\n"
+"    font-weight: bold;\n"
+"    text-align: center;\n"
+"}\n"
+"\n"
+"QTableWidget QScrollBar:vertical {\n"
+"    background-color: rgb(144, 175, 197);\n"
+"    width: 12px;\n"
+"    margin: 0px;\n"
+"}\n"
+"\n"
+"QTableWidget QScrollBar::handle:vertical {\n"
+"    background-color: #336b87;\n"
+"    border-radius: 6px;\n"
+"    min-height: 20px;\n"
+"}\n"
+"\n"
+"QTableWidget QScrollBar::add-line:vertical,\n"
+"QTableWidget QScrollBar::sub-line:vertical {\n"
+"    height: 0px;\n"
+"}\n"
+"\n"
+"QTableWidget QScrollBar:horizontal {\n"
+"    background-color: rgb(144, 175, 197);\n"
+"    height: 12px;\n"
+"    margin: 0px;\n"
+"}\n"
+"\n"
+"QTableWidget QScrollBar::handle:horizontal {\n"
+"    background-color: #336b87;\n"
+"    border-radius: 6px;\n"
+"    min-width: 20px;\n"
+"}\n"
+"\n"
+"QTableWidget QScrollBar::add-line:horizontal,\n"
+"QTableWidget QScrollBar::sub-line:horizontal {\n"
+"    width: 0px;\n"
+"}\n"
+"         ")
+        self.applications_table.setAlternatingRowColors(True)
+        self.applications_table.setSelectionMode(QtWidgets.QAbstractItemView.SelectionMode.SingleSelection)
+        self.applications_table.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectionBehavior.SelectRows)
+        self.applications_table.setObjectName("applications_table")
+        self.applications_table.setColumnCount(0)
+        self.applications_table.setRowCount(0)
+        self.verticalLayout_3.addWidget(self.applications_table)
+        self.stackedWidget.addWidget(self.page_applications)
+        self.lienhe = QtWidgets.QWidget()
+        self.lienhe.setObjectName("lienhe")
+        self.label_75 = QtWidgets.QLabel(parent=self.lienhe)
         self.label_75.setGeometry(QtCore.QRect(30, 30, 621, 31))
         font = QtGui.QFont()
         font.setBold(False)
@@ -180,154 +284,118 @@ class Ui_MainWindow(object):
 "border-radius: 10px;\n"
 "color:rgb(255, 255, 255)")
         self.label_75.setObjectName("label_75")
-        self.label_76 = QtWidgets.QLabel(parent=self.page_3)
+        self.label_76 = QtWidgets.QLabel(parent=self.lienhe)
         self.label_76.setGeometry(QtCore.QRect(30, 90, 621, 31))
         self.label_76.setStyleSheet("background-color:rgb(0, 0, 165);\n"
 "border-radius: 10px;\n"
 "color:rgb(255, 255, 255)")
         self.label_76.setObjectName("label_76")
-        self.label_77 = QtWidgets.QLabel(parent=self.page_3)
+        self.label_77 = QtWidgets.QLabel(parent=self.lienhe)
         self.label_77.setGeometry(QtCore.QRect(30, 290, 621, 31))
         self.label_77.setStyleSheet("background-color:rgb(0, 0, 165);\n"
 "border-radius: 10px;\n"
 "color:rgb(255, 255, 255)")
         self.label_77.setObjectName("label_77")
-        self.label_78 = QtWidgets.QLabel(parent=self.page_3)
+        self.label_78 = QtWidgets.QLabel(parent=self.lienhe)
         self.label_78.setGeometry(QtCore.QRect(30, 150, 621, 31))
         self.label_78.setStyleSheet("background-color:rgb(0, 0, 165);\n"
 "border-radius: 10px;\n"
 "color:rgb(255, 255, 255)")
         self.label_78.setObjectName("label_78")
-        self.label_79 = QtWidgets.QLabel(parent=self.page_3)
+        self.label_79 = QtWidgets.QLabel(parent=self.lienhe)
         self.label_79.setGeometry(QtCore.QRect(30, 350, 621, 31))
         self.label_79.setStyleSheet("background-color:rgb(0, 0, 165);\n"
 "border-radius: 10px;\n"
 "color:rgb(255, 255, 255)")
         self.label_79.setObjectName("label_79")
-        self.label_80 = QtWidgets.QLabel(parent=self.page_3)
+        self.label_80 = QtWidgets.QLabel(parent=self.lienhe)
         self.label_80.setGeometry(QtCore.QRect(30, 220, 621, 31))
         self.label_80.setStyleSheet("background-color:rgb(0, 0, 165);\n"
 "border-radius: 10px;\n"
 "color:rgb(255, 255, 255)")
         self.label_80.setObjectName("label_80")
-        self.label_81 = QtWidgets.QLabel(parent=self.page_3)
+        self.label_81 = QtWidgets.QLabel(parent=self.lienhe)
         self.label_81.setGeometry(QtCore.QRect(30, 470, 621, 31))
         self.label_81.setStyleSheet("background-color:rgb(0, 0, 165);\n"
 "border-radius: 10px;\n"
 "color:rgb(255, 255, 255)")
         self.label_81.setObjectName("label_81")
-        self.label_82 = QtWidgets.QLabel(parent=self.page_3)
+        self.label_82 = QtWidgets.QLabel(parent=self.lienhe)
         self.label_82.setGeometry(QtCore.QRect(30, 410, 621, 31))
         self.label_82.setStyleSheet("background-color:rgb(0, 0, 165);\n"
 "border-radius: 10px;\n"
 "color:rgb(255, 255, 255)")
         self.label_82.setObjectName("label_82")
-        self.label_83 = QtWidgets.QLabel(parent=self.page_3)
+        self.label_83 = QtWidgets.QLabel(parent=self.lienhe)
         self.label_83.setGeometry(QtCore.QRect(30, 520, 621, 31))
         self.label_83.setStyleSheet("background-color:rgb(0, 0, 165);\n"
 "border-radius: 10px;\n"
 "color:rgb(255, 255, 255)")
         self.label_83.setObjectName("label_83")
-        self.label_84 = QtWidgets.QLabel(parent=self.page_3)
+        self.label_84 = QtWidgets.QLabel(parent=self.lienhe)
         self.label_84.setGeometry(QtCore.QRect(30, 570, 621, 31))
         self.label_84.setStyleSheet("background-color:rgb(0, 0, 165);\n"
 "border-radius: 10px;\n"
 "color:rgb(255, 255, 255)")
         self.label_84.setObjectName("label_84")
-        self.verticalScrollBar_4 = QtWidgets.QScrollBar(parent=self.page_3)
+        self.verticalScrollBar_4 = QtWidgets.QScrollBar(parent=self.lienhe)
         self.verticalScrollBar_4.setGeometry(QtCore.QRect(990, 20, 16, 591))
         self.verticalScrollBar_4.setOrientation(QtCore.Qt.Orientation.Vertical)
         self.verticalScrollBar_4.setObjectName("verticalScrollBar_4")
-        self.verticalScrollBar_2 = QtWidgets.QScrollBar(parent=self.page_3)
+        self.verticalScrollBar_2 = QtWidgets.QScrollBar(parent=self.lienhe)
         self.verticalScrollBar_2.setGeometry(QtCore.QRect(970, 30, 16, 471))
         self.verticalScrollBar_2.setOrientation(QtCore.Qt.Orientation.Vertical)
         self.verticalScrollBar_2.setObjectName("verticalScrollBar_2")
-        self.stackedWidget.addWidget(self.page_3)
-        self.page = QtWidgets.QWidget()
-        self.page.setObjectName("page")
-        self.lineEdit_3 = QtWidgets.QLineEdit(parent=self.page)
-        self.lineEdit_3.setGeometry(QtCore.QRect(340, 160, 261, 51))
+        self.stackedWidget.addWidget(self.lienhe)
+        self.setting = QtWidgets.QWidget()
+        self.setting.setObjectName("setting")
+        self.txt_name = QtWidgets.QLineEdit(parent=self.setting)
+        self.txt_name.setGeometry(QtCore.QRect(340, 160, 261, 51))
         font = QtGui.QFont()
         font.setFamily("SimSun")
         font.setPointSize(-1)
-        self.lineEdit_3.setFont(font)
-        self.lineEdit_3.setStyleSheet("border: none;\n"
+        self.txt_name.setFont(font)
+        self.txt_name.setStyleSheet("border: none;\n"
 "    border-bottom: 1px solid #000; /* Black underline */\n"
 "    font-size: 14px;\n"
 "    padding: 5px;\n"
 "color: white;")
-        self.lineEdit_3.setText("")
-        self.lineEdit_3.setFrame(False)
-        self.lineEdit_3.setEchoMode(QtWidgets.QLineEdit.EchoMode.Normal)
-        self.lineEdit_3.setDragEnabled(False)
-        self.lineEdit_3.setReadOnly(False)
-        self.lineEdit_3.setClearButtonEnabled(False)
-        self.lineEdit_3.setObjectName("lineEdit_3")
-        self.lineEdit_7 = QtWidgets.QLineEdit(parent=self.page)
-        self.lineEdit_7.setGeometry(QtCore.QRect(340, 240, 261, 51))
-        font = QtGui.QFont()
-        font.setFamily("SimSun")
-        font.setPointSize(-1)
-        self.lineEdit_7.setFont(font)
-        self.lineEdit_7.setStyleSheet("border: none;\n"
-"    border-bottom: 1px solid #000; /* Black underline */\n"
-"    font-size: 14px;\n"
-"    padding: 5px;\n"
-"color: white;")
-        self.lineEdit_7.setText("")
-        self.lineEdit_7.setFrame(False)
-        self.lineEdit_7.setEchoMode(QtWidgets.QLineEdit.EchoMode.Normal)
-        self.lineEdit_7.setDragEnabled(False)
-        self.lineEdit_7.setReadOnly(False)
-        self.lineEdit_7.setClearButtonEnabled(False)
-        self.lineEdit_7.setObjectName("lineEdit_7")
-        self.pushButton = QtWidgets.QPushButton(parent=self.page)
-        self.pushButton.setGeometry(QtCore.QRect(340, 500, 261, 51))
-        self.pushButton.setStyleSheet("background-color: #000; /* Black background */\n"
+        self.txt_name.setText("")
+        self.txt_name.setFrame(False)
+        self.txt_name.setEchoMode(QtWidgets.QLineEdit.EchoMode.Normal)
+        self.txt_name.setDragEnabled(False)
+        self.txt_name.setReadOnly(False)
+        self.txt_name.setClearButtonEnabled(False)
+        self.txt_name.setObjectName("txt_name")
+        self.btn_update_info = QtWidgets.QPushButton(parent=self.setting)
+        self.btn_update_info.setGeometry(QtCore.QRect(340, 500, 261, 51))
+        self.btn_update_info.setStyleSheet("background-color: #000; /* Black background */\n"
 "    color: #fff; /* White text */\n"
 "    font-size: 14px; /* Adjust text size */\n"
 "    border: none; /* Remove borders */\n"
 "    border-radius: 20px; /* Rounded corners */\n"
 "    padding: 10px 20px; /* Add padding for a larger button */\n"
 "    text-align: center; /* Center the text */")
-        self.pushButton.setObjectName("pushButton")
-        self.lineEdit_8 = QtWidgets.QLineEdit(parent=self.page)
-        self.lineEdit_8.setGeometry(QtCore.QRect(340, 320, 261, 51))
+        self.btn_update_info.setObjectName("btn_update_info")
+        self.txt_email = QtWidgets.QLineEdit(parent=self.setting)
+        self.txt_email.setGeometry(QtCore.QRect(340, 240, 261, 51))
         font = QtGui.QFont()
         font.setFamily("SimSun")
         font.setPointSize(-1)
-        self.lineEdit_8.setFont(font)
-        self.lineEdit_8.setStyleSheet("border: none;\n"
+        self.txt_email.setFont(font)
+        self.txt_email.setStyleSheet("border: none;\n"
 "    border-bottom: 1px solid #000; /* Black underline */\n"
 "    font-size: 14px;\n"
 "    padding: 5px;\n"
 "color: white;")
-        self.lineEdit_8.setText("")
-        self.lineEdit_8.setFrame(False)
-        self.lineEdit_8.setEchoMode(QtWidgets.QLineEdit.EchoMode.Normal)
-        self.lineEdit_8.setDragEnabled(False)
-        self.lineEdit_8.setReadOnly(False)
-        self.lineEdit_8.setClearButtonEnabled(False)
-        self.lineEdit_8.setObjectName("lineEdit_8")
-        self.lineEdit_9 = QtWidgets.QLineEdit(parent=self.page)
-        self.lineEdit_9.setGeometry(QtCore.QRect(340, 400, 261, 51))
-        font = QtGui.QFont()
-        font.setFamily("SimSun")
-        font.setPointSize(-1)
-        self.lineEdit_9.setFont(font)
-        self.lineEdit_9.setStyleSheet("border: none;\n"
-"    border-bottom: 1px solid #000; /* Black underline */\n"
-"    font-size: 14px;\n"
-"    padding: 5px;\n"
-"color: white;")
-        self.lineEdit_9.setText("")
-        self.lineEdit_9.setFrame(False)
-        self.lineEdit_9.setEchoMode(QtWidgets.QLineEdit.EchoMode.Normal)
-        self.lineEdit_9.setDragEnabled(False)
-        self.lineEdit_9.setReadOnly(False)
-        self.lineEdit_9.setClearButtonEnabled(False)
-        self.lineEdit_9.setObjectName("lineEdit_9")
-        self.btn_avatar = QtWidgets.QPushButton(parent=self.page)
+        self.txt_email.setText("")
+        self.txt_email.setFrame(False)
+        self.txt_email.setEchoMode(QtWidgets.QLineEdit.EchoMode.Normal)
+        self.txt_email.setDragEnabled(False)
+        self.txt_email.setReadOnly(False)
+        self.txt_email.setClearButtonEnabled(False)
+        self.txt_email.setObjectName("txt_email")
+        self.btn_avatar = QtWidgets.QPushButton(parent=self.setting)
         self.btn_avatar.setGeometry(QtCore.QRect(350, 10, 201, 141))
         self.btn_avatar.setAutoFillBackground(False)
         self.btn_avatar.setText("")
@@ -343,7 +411,26 @@ class Ui_MainWindow(object):
         self.btn_avatar.setDefault(False)
         self.btn_avatar.setFlat(True)
         self.btn_avatar.setObjectName("btn_avatar")
-        self.stackedWidget.addWidget(self.page)
+        self.d_dob = QtWidgets.QDateEdit(parent=self.setting)
+        self.d_dob.setGeometry(QtCore.QRect(340, 330, 261, 51))
+        self.d_dob.setStyleSheet("border: none;\n"
+"    border-bottom: 1px solid #000; /* Black underline */\n"
+"    font-size: 14px;\n"
+"    padding: 5px;\n"
+"color: white;")
+        self.d_dob.setObjectName("d_dob")
+        self.cb_gender = QtWidgets.QComboBox(parent=self.setting)
+        self.cb_gender.setGeometry(QtCore.QRect(340, 420, 261, 41))
+        self.cb_gender.setStyleSheet("border: none;\n"
+"    border-bottom: 1px solid #000; /* Black underline */\n"
+"    font-size: 14px;\n"
+"    padding: 5px;\n"
+"color: white;")
+        self.cb_gender.setObjectName("cb_gender")
+        self.cb_gender.addItem("")
+        self.cb_gender.addItem("")
+        self.cb_gender.addItem("")
+        self.stackedWidget.addWidget(self.setting)
         self.page_chucnang = QtWidgets.QWidget()
         self.page_chucnang.setObjectName("page_chucnang")
         self.label = QtWidgets.QLabel(parent=self.page_chucnang)
@@ -394,22 +481,6 @@ class Ui_MainWindow(object):
 "color:rgb(255, 255, 255);\n"
 " text-align: center")
         self.label_12.setObjectName("label_12")
-        self.label_13 = QtWidgets.QLabel(parent=self.page_chucnang)
-        self.label_13.setGeometry(QtCore.QRect(40, 250, 71, 41))
-        font = QtGui.QFont()
-        font.setBold(False)
-        font.setItalic(False)
-        font.setUnderline(False)
-        font.setStrikeOut(False)
-        self.label_13.setFont(font)
-        self.label_13.setMouseTracking(False)
-        self.label_13.setStyleSheet("background-color:rgb(0, 0, 165);\n"
-"border-radius: 10px;\n"
-"color:rgb(255, 255, 255)")
-        self.label_13.setScaledContents(False)
-        self.label_13.setWordWrap(False)
-        self.label_13.setOpenExternalLinks(False)
-        self.label_13.setObjectName("label_13")
         self.label_14 = QtWidgets.QLabel(parent=self.page_chucnang)
         self.label_14.setGeometry(QtCore.QRect(40, 420, 71, 41))
         self.label_14.setStyleSheet("background-color:rgb(0, 0, 165);\n"
@@ -446,12 +517,6 @@ class Ui_MainWindow(object):
         self.label_46.setWordWrap(False)
         self.label_46.setOpenExternalLinks(False)
         self.label_46.setObjectName("label_46")
-        self.label_47 = QtWidgets.QLabel(parent=self.page_chucnang)
-        self.label_47.setGeometry(QtCore.QRect(30, 90, 101, 41))
-        self.label_47.setStyleSheet("background-color:rgb(0, 0, 165);\n"
-"border-radius: 10px;\n"
-"color:rgb(255, 255, 255)")
-        self.label_47.setObjectName("label_47")
         self.label_48 = QtWidgets.QLabel(parent=self.page_chucnang)
         self.label_48.setGeometry(QtCore.QRect(270, 50, 41, 31))
         self.label_48.setStyleSheet("")
@@ -525,6 +590,18 @@ class Ui_MainWindow(object):
         self.label_85.setPixmap(QtGui.QPixmap("/Users/pinxun/Documents/MindX/PTA/PTA07/TriCuong/python-app/ui/../img/hot-pot.png"))
         self.label_85.setScaledContents(True)
         self.label_85.setObjectName("label_85")
+        self.btn_schedule = QtWidgets.QPushButton(parent=self.page_chucnang)
+        self.btn_schedule.setGeometry(QtCore.QRect(30, 100, 100, 32))
+        self.btn_schedule.setStyleSheet("background-color:rgb(0, 0, 165);\n"
+"border-radius: 10px;\n"
+"color:rgb(255, 255, 255)")
+        self.btn_schedule.setObjectName("btn_schedule")
+        self.btn_application = QtWidgets.QPushButton(parent=self.page_chucnang)
+        self.btn_application.setGeometry(QtCore.QRect(30, 260, 100, 32))
+        self.btn_application.setStyleSheet("background-color:rgb(0, 0, 165);\n"
+"border-radius: 10px;\n"
+"color:rgb(255, 255, 255)")
+        self.btn_application.setObjectName("btn_application")
         self.stackedWidget.addWidget(self.page_chucnang)
         self.page_schedule = QtWidgets.QWidget()
         self.page_schedule.setObjectName("page_schedule")
@@ -665,15 +742,15 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.addWidget(self.schedule_table)
         self.horizontalLayout_2.addWidget(self.schedule_widget)
         self.stackedWidget.addWidget(self.page_schedule)
-        self.ten = QtWidgets.QLabel(parent=self.centralwidget)
-        self.ten.setGeometry(QtCore.QRect(0, 0, 591, 51))
+        self.name_header = QtWidgets.QLabel(parent=self.centralwidget)
+        self.name_header.setGeometry(QtCore.QRect(0, 0, 591, 51))
         font = QtGui.QFont()
         font.setPointSize(16)
-        self.ten.setFont(font)
-        self.ten.setStyleSheet("background-color:rgb(118, 54, 54);\n"
+        self.name_header.setFont(font)
+        self.name_header.setStyleSheet("background-color:rgb(118, 54, 54);\n"
 "border-radius: 10px;\n"
 "color:rgb(255, 255, 255)")
-        self.ten.setObjectName("ten")
+        self.name_header.setObjectName("name_header")
         self.btn_chucnang = QtWidgets.QPushButton(parent=self.centralwidget)
         self.btn_chucnang.setGeometry(QtCore.QRect(10, 230, 81, 31))
         self.btn_chucnang.setStyleSheet("background-color:rgb(204, 136, 102);\n"
@@ -741,7 +818,7 @@ class Ui_MainWindow(object):
         self.label_21.setObjectName("label_21")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1100, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1100, 24))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(parent=MainWindow)
@@ -749,7 +826,7 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(4)
+        self.stackedWidget.setCurrentIndex(3)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -760,6 +837,9 @@ class Ui_MainWindow(object):
         self.label_6.setText(_translate("MainWindow", "[SSV] - Thông Tin Chi Tiết Về \"House Colour Day\" | Information Regarding \"House Colour Day\""))
         self.label_7.setText(_translate("MainWindow", "[SSV] - Show Your House Spirit – Wear Your House Colors! | Thể hiện tinh thần Nhà - Diện Màu của Nhà!"))
         self.label_16.setText(_translate("MainWindow", "[SSV] - Sedbergh Vietnam 2024 Christmas Letter | Thư Giáng Sinh 2024"))
+        self.btn_new_application.setText(_translate("MainWindow", "Tạo đơn mới"))
+        self.btn_edit_application.setText(_translate("MainWindow", "Sửa đơn"))
+        self.btn_delete_application.setText(_translate("MainWindow", "Xóa đơn"))
         self.label_75.setText(_translate("MainWindow", " Lê Hiếu-Giáo Viên chủ nhiệm-Địa lí"))
         self.label_76.setText(_translate("MainWindow", " Phạm Đăng Dung-Ngữ văn"))
         self.label_77.setText(_translate("MainWindow", " Nguyễn Huyền Trang-GDKT-PL"))
@@ -770,11 +850,12 @@ class Ui_MainWindow(object):
         self.label_82.setText(_translate("MainWindow", "  Emily Williams-Core English"))
         self.label_83.setText(_translate("MainWindow", "  Bùi Thị Lan-Toán"))
         self.label_84.setText(_translate("MainWindow", "  Mai Quốc Duy-Hoá học"))
-        self.lineEdit_3.setPlaceholderText(_translate("MainWindow", "Name"))
-        self.lineEdit_7.setPlaceholderText(_translate("MainWindow", "Birthday"))
-        self.pushButton.setText(_translate("MainWindow", "Save"))
-        self.lineEdit_8.setPlaceholderText(_translate("MainWindow", "Mail"))
-        self.lineEdit_9.setPlaceholderText(_translate("MainWindow", "Address"))
+        self.txt_name.setPlaceholderText(_translate("MainWindow", "Name"))
+        self.btn_update_info.setText(_translate("MainWindow", "Save"))
+        self.txt_email.setPlaceholderText(_translate("MainWindow", "Mail"))
+        self.cb_gender.setItemText(0, _translate("MainWindow", "None"))
+        self.cb_gender.setItemText(1, _translate("MainWindow", "Male"))
+        self.cb_gender.setItemText(2, _translate("MainWindow", "Female"))
         self.label.setText(_translate("MainWindow", "Hoạt Động hàng ngày"))
         self.label_2.setText(_translate("MainWindow", "Học tập"))
         self.label_5.setText(_translate("MainWindow", "Dịch vụ"))
@@ -782,15 +863,15 @@ class Ui_MainWindow(object):
         self.label_10.setText(_translate("MainWindow", "Điểm danh"))
         self.label_11.setText(_translate("MainWindow", "Đánh giá định kì"))
         self.label_12.setText(_translate("MainWindow", "Đánh giá thường xuyên"))
-        self.label_13.setText(_translate("MainWindow", "  Xin nghỉ"))
         self.label_14.setText(_translate("MainWindow", "  Xe buýt"))
         self.label_43.setText(_translate("MainWindow", "Thông tin học sinh"))
         self.label_44.setText(_translate("MainWindow", "Yêu cầu hỗ trợ "))
         self.label_45.setText(_translate("MainWindow", "Đặt lịch"))
-        self.label_47.setText(_translate("MainWindow", "Thời khoá biểu"))
         self.label_15.setText(_translate("MainWindow", " Ăn uống"))
+        self.btn_schedule.setText(_translate("MainWindow", "Thời khoá biểu"))
+        self.btn_application.setText(_translate("MainWindow", "Làm đơn"))
         self.date_label.setText(_translate("MainWindow", "Thời khoá biểu ngày: "))
-        self.ten.setText(_translate("MainWindow", " Cao Bảo Châu"))
+        self.name_header.setText(_translate("MainWindow", " Cao Bảo Châu"))
         self.btn_chucnang.setText(_translate("MainWindow", "Chức năng"))
         self.btn_lienhe.setText(_translate("MainWindow", "Liên hệ"))
         self.btn_caidat.setText(_translate("MainWindow", "Cài đặt"))
