@@ -36,7 +36,7 @@
      <string notr="true">background-color:rgb(144, 175, 197)</string>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>4</number>
     </property>
     <widget class="QWidget" name="page_tintuc">
      <widget class="QTimeEdit" name="timeEdit">
@@ -391,7 +391,7 @@ color:rgb(255, 255, 255)</string>
       </property>
       <property name="maximumDateTime">
        <datetime>
-        <hour>14</hour>
+        <hour>7</hour>
         <minute>59</minute>
         <second>59</second>
         <year>9999</year>
@@ -479,7 +479,7 @@ color:rgb(255, 255, 255)</string>
       </property>
       <property name="maximumDateTime">
        <datetime>
-        <hour>7</hour>
+        <hour>0</hour>
         <minute>59</minute>
         <second>59</second>
         <year>9999</year>

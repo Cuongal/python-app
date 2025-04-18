@@ -7,46 +7,6 @@ def dict_factory(cursor, row):
         d[col[0]] = row[idx]
     return d
 
-def create_tables():
-    conn = sqlite3.connect('./data/database.db')
-    cursor = conn.cursor()
-    
-    # Drop and recreate only schedule table
-    cursor.execute('DROP TABLE IF EXISTS schedule')
-    
-    cursor.execute('''
-    CREATE TABLE IF NOT EXISTS schedule (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        date TEXT NOT NULL,
-        subject TEXT NOT NULL,
-        start_time TEXT NOT NULL,
-        end_time TEXT NOT NULL,
-        teacher TEXT NOT NULL,
-        room TEXT NOT NULL,
-        type TEXT DEFAULT 'normal'
-    )
-    ''')
-    
-    # Create applications table
-    cursor.execute('''
-    CREATE TABLE IF NOT EXISTS applications (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        user_id INTEGER NOT NULL,
-        type TEXT NOT NULL,
-        recipient TEXT NOT NULL,
-        title TEXT NOT NULL,
-        content TEXT NOT NULL,
-        start_date TEXT NOT NULL,
-        end_date TEXT NOT NULL,
-        status TEXT NOT NULL,
-        created_at TEXT NOT NULL
-    )
-    ''')
-    
-    conn.commit()
-    conn.close()
-    print("Tables created successfully")
-
 def get_schedule_by_date(date_str):
     conn = sqlite3.connect('./data/database.db')
     cursor = conn.cursor()
@@ -197,10 +157,15 @@ def update_application(data):
 
 def delete_application(app_id):
     """Delete an application"""
+    if not app_id:
+        return False
+        
     conn = sqlite3.connect('./data/database.db')
     cursor = conn.cursor()
     try:
         cursor.execute('DELETE FROM applications WHERE id = ?', (app_id,))
+        if cursor.rowcount == 0:  # No rows were deleted
+            return False
         conn.commit()
         return True
     except Exception as e:

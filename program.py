@@ -210,12 +210,9 @@ class Main(QMainWindow):
         self.btn_avatar.clicked.connect(self.update_avatar)
         
         # Connect application buttons
-        if self.btn_new_application:
-            self.btn_new_application.clicked.connect(self.create_new_application)
-        if self.btn_edit_application:
-            self.btn_edit_application.clicked.connect(self.edit_application)
-        if self.btn_delete_application:
-            self.btn_delete_application.clicked.connect(self.delete_application)
+        self.btn_new_application.clicked.connect(self.create_new_application)
+        self.btn_edit_application.clicked.connect(self.edit_application)
+        self.btn_delete_application.clicked.connect(self.delete_application)
         
         # Connect calendar selection changed signal
         if self.calendar:
@@ -299,40 +296,61 @@ class Main(QMainWindow):
 
     def create_new_application(self):
         dialog = ApplicationDialog(self)
-        if dialog.exec() == QDialog.accept:
+        if dialog.exec() == QDialog.DialogCode.Accepted:
             data = dialog.get_data()
             data['user_id'] = self.user_id
-            data['status'] = 'pending'
-            database.create_application(data)
-            self.load_applications()
+            data['created_at'] = QDate.currentDate().toString('yyyy-MM-dd')
+            data['status'] = 'Chờ duyệt'  # Add default status
+            
+            if database.create_application(data):
+                QMessageBox.information(self, "Thành công", "Đã tạo đơn thành công")
+                self.load_applications()
+            else:
+                QMessageBox.warning(self, "Lỗi", "Không thể tạo đơn. Vui lòng thử lại")
     
     def edit_application(self):
         current_row = self.applications_table.currentRow()
         if current_row >= 0:
-            application_id = int(self.applications_table.item(current_row, 0).text())
+            # Get the application ID from the user data role instead of the displayed text
+            application_id = self.applications_table.item(current_row, 0).data(Qt.ItemDataRole.UserRole)
             application = database.get_application_by_id(application_id)
             if application:
                 dialog = ApplicationDialog(self, application)
-                if dialog.exec() == QDialog.accept:
+                if dialog.exec() == QDialog.DialogCode.Accepted:
                     data = dialog.get_data()
                     data['id'] = application_id
-                    database.update_application(data)
-                    self.load_applications()
+                    if database.update_application(data):
+                        QMessageBox.information(self, "Thành công", "Đã cập nhật đơn thành công")
+                        self.load_applications()
+                    else:
+                        QMessageBox.warning(self, "Lỗi", "Không thể cập nhật đơn. Vui lòng thử lại")
     
     def delete_application(self):
         current_row = self.applications_table.currentRow()
-        if current_row >= 0:
-            application_id = int(self.applications_table.item(current_row, 0).text())
-            reply = QMessageBox.question(
-                self,
-                'Xác nhận xóa',
-                'Bạn có chắc chắn muốn xóa đơn này?',
-                QMessageBox.Yes | QMessageBox.No,
-                QMessageBox.No
-            )
-            if reply == QMessageBox.Yes:
-                database.delete_application(application_id)
+        if current_row < 0:
+            QMessageBox.warning(self, "Lỗi", "Vui lòng chọn đơn cần xóa")
+            return
+            
+        # Get the application ID from the user data role
+        application_id = self.applications_table.item(current_row, 0).data(Qt.ItemDataRole.UserRole)
+        if not application_id:
+            QMessageBox.warning(self, "Lỗi", "Không tìm thấy mã đơn")
+            return
+            
+        reply = QMessageBox.question(
+            self,
+            'Xác nhận xóa',
+            'Bạn có chắc chắn muốn xóa đơn này?',
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+            QMessageBox.StandardButton.No
+        )
+        
+        if reply == QMessageBox.StandardButton.Yes:
+            if database.delete_application(application_id):
+                QMessageBox.information(self, "Thành công", "Đã xóa đơn thành công")
                 self.load_applications()
+            else:
+                QMessageBox.warning(self, "Lỗi", "Không thể xóa đơn. Vui lòng thử lại")
 
     def navigation(self, index):
         print(f"Navigating to index: {index}")  # Debug print

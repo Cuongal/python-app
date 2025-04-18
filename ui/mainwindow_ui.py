@@ -139,7 +139,7 @@ class Ui_MainWindow(object):
         self.dateEdit_5.setStyleSheet("background-color:rgb(255, 255, 255)")
         self.dateEdit_5.setDateTime(QtCore.QDateTime(QtCore.QDate(2024, 12, 10), QtCore.QTime(11, 38, 0)))
         self.dateEdit_5.setTime(QtCore.QTime(11, 38, 0))
-        self.dateEdit_5.setMaximumDateTime(QtCore.QDateTime(QtCore.QDate(9999, 12, 8), QtCore.QTime(14, 59, 59)))
+        self.dateEdit_5.setMaximumDateTime(QtCore.QDateTime(QtCore.QDate(9999, 12, 8), QtCore.QTime(7, 59, 59)))
         self.dateEdit_5.setObjectName("dateEdit_5")
         self.label_16 = QtWidgets.QLabel(parent=self.page_tintuc)
         self.label_16.setEnabled(True)
@@ -166,7 +166,7 @@ class Ui_MainWindow(object):
         self.dateEdit_6.setStyleSheet("background-color:rgb(255, 255, 255)")
         self.dateEdit_6.setDateTime(QtCore.QDateTime(QtCore.QDate(2024, 12, 10), QtCore.QTime(11, 38, 0)))
         self.dateEdit_6.setTime(QtCore.QTime(11, 38, 0))
-        self.dateEdit_6.setMaximumDateTime(QtCore.QDateTime(QtCore.QDate(9999, 12, 8), QtCore.QTime(7, 59, 59)))
+        self.dateEdit_6.setMaximumDateTime(QtCore.QDateTime(QtCore.QDate(9999, 12, 8), QtCore.QTime(0, 59, 59)))
         self.dateEdit_6.setObjectName("dateEdit_6")
         self.stackedWidget.addWidget(self.page_tintuc)
         self.page_applications = QtWidgets.QWidget()
@@ -826,7 +826,7 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentIndex(4)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
