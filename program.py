@@ -453,7 +453,6 @@ class ApplicationDialog(QDialog):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    # login = Login()
-    main = Main(2)
-    main.show()
+    login = Login()
+    login.show()
     sys.exit(app.exec())
